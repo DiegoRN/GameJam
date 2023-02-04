@@ -9,6 +9,7 @@ public class Slot : MonoBehaviour
     [SerializeField] private Image image;
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private GameObject ItemObjectPrefab;
+    [SerializeField] private TextMeshProUGUI description;
 
     public Item myItem;
 
@@ -24,5 +25,16 @@ public class Slot : MonoBehaviour
         GameObject theObject = Instantiate(ItemObjectPrefab, Vector3.zero, Quaternion.identity);
         theObject.GetComponent<ItemObject>().SetItem(myItem);
         InventoryContorller.Instance.DeleteItem(this);
+    }
+
+    public void ShowDescription()
+    {
+        description.text = myItem.ItemDescription;
+        description.enabled = true;
+    }
+
+    public void HideDescription()
+    {
+        description.enabled = false;
     }
 }
