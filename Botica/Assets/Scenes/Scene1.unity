@@ -229,6 +229,15 @@ MonoBehaviour:
   ouroborosImage: {fileID: 1794993433}
   ouroborosSpeed: 0
   fadeIn: {fileID: 381859402}
+  numVecesEscena2: 1
+  primeraVezHablaEscena21: 1
+  primeraVezHablaEscena22: 1
+  primeraVezHablaEscena23: 1
+  comenzarDialogo21: 0
+  comenzarDialogo22: 0
+  comenzarDialogo23: 0
+  activarMovimiento21: 0
+  player: {fileID: 0}
   creditsSpeed: 0
   creditsText: {fileID: 0}
   finalCreditsTime: 0
@@ -1488,7 +1497,7 @@ MonoBehaviour:
   numDialogo: 0
   player: {fileID: 1265375707}
   dejarDeHablar: 1
-  jsonDialogoMapa1: {fileID: 4900000, guid: de3c17397c1ae2e49b597539591a6ae9, type: 3}
+  jsonDialogoMapa1: {fileID: 4900000, guid: f75247d331db2f9449c7c064da73dc45, type: 3}
   jsonDialogoMapa2: {fileID: 0}
   gameManager: {fileID: 251527898}
   myDialogosList:

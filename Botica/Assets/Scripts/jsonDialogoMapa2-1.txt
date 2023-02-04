@@ -1,0 +1,19 @@
+{
+    "dialogos": [
+        {
+            "Frase1": "Martin: I can't turn back."
+        },
+        {
+            "Frase1": "Door: knock, knock, knock"
+        },
+	  {
+            "Frase1": "Martin: I have to hurry."
+        },
+        {
+            "Frase1": "Cynthia: My dear John at long last we are together, I am so happy to finally be here."
+	  },
+	  {
+            "Frase1": "Martin: Yes, I’m John."
+	  }
+    ]
+}
