@@ -31,6 +31,10 @@ public class Dialogo : MonoBehaviour
 
     int numEscena;
 
+    public GameManager gameManager;
+
+    bool primeraVez = true;
+
     [System.Serializable]
     public class Dialogos
     {
@@ -166,6 +170,7 @@ public class Dialogo : MonoBehaviour
         }
         else if (numDialogo == 1)
         {
+            //gameManager.comenzarDialogo = false;
             panelDialogo.SetActive(false);
             dejarDeHablar = true;
         }
@@ -215,8 +220,23 @@ public class Dialogo : MonoBehaviour
     void Update()
     {
         //Controlador scriptControlador = controlador.GetComponent<Controlador>();
+        
+        if (gameManager.comenzarDialogo)
+        {
 
-        if (Input.GetKey(KeyCode.A)) Hablar();
+            if (primeraVez)
+            {
+                Hablar();
+
+                //continuarDialogo = true;
+                primeraVez = false;
+            }
+
+        }
+        
+
+       // if (Input.GetKey(KeyCode.Return)) Hablar();
+
             // En el caso de que se toque la pantalla y haya aparecido la fecha
         if ((flecha.activeSelf && panelSiguiente.Pressed) || flecha.activeSelf && Input.GetKey(KeyCode.Return))
         {
