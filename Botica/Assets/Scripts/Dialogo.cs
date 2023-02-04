@@ -173,6 +173,7 @@ public class Dialogo : MonoBehaviour
             //gameManager.comenzarDialogo = false;
             panelDialogo.SetActive(false);
             dejarDeHablar = true;
+            gameManager.finalEscena = true;
         }
 
         if (dejarDeHablar) CerrarDialogo();
