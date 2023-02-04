@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
     [SerializeField] private Image imageItem;
-    [SerializeField] private Image imageGroup;
+    //[SerializeField] private Image imageGroup;
     [SerializeField] private int index;
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private GameObject ItemObjectPrefab;
@@ -25,7 +25,7 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
         imageItem.raycastTarget = false;
-        imageGroup.raycastTarget = false;
+        //imageGroup.raycastTarget = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -37,7 +37,7 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         transform.SetParent(parentAfterDrag);
         imageItem.raycastTarget = true;
-        imageGroup.raycastTarget = true;
+        //imageGroup.raycastTarget = true;
     }
 
     public void OnDrop(PointerEventData eventData)
