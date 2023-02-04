@@ -30,21 +30,15 @@ public class InteractionObject : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter(Collider other)
+    public void ActivateImage()
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            interactionButton.SetActive(true);
-            playerInRange = true;
-        }
+        interactionButton.SetActive(true);
+        playerInRange = true;
     }
 
-    private void OnTriggerExit(Collider other)
+    public void DeactivateImage()
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            interactionButton.SetActive(false);
-            playerInRange = false;
-        }
+        interactionButton.SetActive(false);
+        playerInRange = false;
     }
 }
