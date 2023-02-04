@@ -56,18 +56,23 @@ public class InventoryContorller : MonoBehaviour
         if (theInventory.GetAmount() != 0)
         {
             GameObject SlotToRemove;
+            int i = 0;
             foreach(GameObject slot in Slots)
             {
-                if (slot.GetComponent<Slot>().myItem == Item)
+                if (slot.GetComponentInChildren<Slot>() != null)
                 {
-                    SlotToRemove = slot;
-                    //Slots.Remove(SlotToRemove.gameObject);
-                    Destroy(SlotToRemove.gameObject);
-                    //Slots[index].SetActive(false);
-                    theInventory.RemoveItem(Item);
-                    print("Quitamos el item");
+                    if (slot.GetComponentInChildren<Slot>().myItem == Item) {
+                        SlotToRemove = slot;
+                        //Slots.Remove(SlotToRemove.gameObject);
+                        //Slots[index].SetActive(false);
+                        theInventory.RemoveItem(Item);
+                        print("Quitamos el item");
+                        i++;
+                    }
                 }
             }
+
+            Destroy(Slots[i]);
         }
     }
 }
