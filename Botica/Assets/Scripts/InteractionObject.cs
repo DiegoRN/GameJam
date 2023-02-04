@@ -6,21 +6,36 @@ public class InteractionObject : MonoBehaviour
 {
     public GameObject interactionButton;
     public Camera cameraScene;
+    private bool playerInRange = false;
+    public float verticalOffsetButton = 50.0f;
+    public float buttonScaleSize = 1.0f;
+
     private void Start()
     {
         interactionButton.SetActive(false);
     }
     private void Update()
     {
-        Vector3 screenPos = cameraScene.WorldToScreenPoint(gameObject.transform.position);
-        interactionButton.transform.position = screenPos;
+        if(playerInRange){
+            Vector3 screenPos = cameraScene.WorldToScreenPoint(gameObject.transform.position);
+            interactionButton.transform.position = new Vector3(screenPos.x, screenPos.y + verticalOffsetButton, screenPos.z);
+            interactionButton.transform.localScale = new Vector3(buttonScaleSize, buttonScaleSize, buttonScaleSize);
+            if(Input.GetKeyDown(KeyCode.G)){
+                //Añadir al inventario
+            }
+            if(Time.timeScale == 0f){
+                interactionButton.SetActive(false);
+            } else{
+                interactionButton.SetActive(true);
+            }
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             interactionButton.SetActive(true);
-
+            playerInRange = true;
         }
     }
 
@@ -29,7 +44,7 @@ public class InteractionObject : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             interactionButton.SetActive(false);
-
+            playerInRange = false;
         }
     }
 }
