@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class InteractionObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject interactionButton;
+    public Camera cameraScene;
+    private void Start()
     {
-        
+        interactionButton.SetActive(false);
+    }
+    private void Update()
+    {
+        Vector3 screenPos = cameraScene.WorldToScreenPoint(gameObject.transform.position);
+        interactionButton.transform.position = screenPos;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            interactionButton.SetActive(true);
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            interactionButton.SetActive(false);
+
+        }
     }
 }
