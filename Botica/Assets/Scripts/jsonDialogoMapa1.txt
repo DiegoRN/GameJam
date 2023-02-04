@@ -1,0 +1,12 @@
+{
+    "dialogos": [
+        {
+            "Frase1": "Remedios: Frase1",
+            "Frase2": "Remedios: Frase2"
+        },
+        {
+            "Frase1": "Cliente1: Hola, soy Pepito.",
+            "Frase2": "Ejemplo diálogo."
+        }
+    ]
+}
