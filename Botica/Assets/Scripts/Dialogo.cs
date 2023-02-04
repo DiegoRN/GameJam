@@ -7,9 +7,11 @@ using Newtonsoft.Json;
 public class Dialogo : MonoBehaviour
 {
     public GameObject panelDialogo;
+    public GameObject panelDialogo2;
     string[] dialogo;
 
     public Text textoDialogo;
+    public Text textoDialogo2;
     public bool dialogoActivo;
 
     Coroutine corrutina;
@@ -18,8 +20,11 @@ public class Dialogo : MonoBehaviour
 
     //public GameObject controlador;
     public GameObject flecha;
+    public GameObject flecha2;
 
     public int numDialogo;
+
+    public GameObject player;
 
 
     public bool dejarDeHablar = true;
@@ -93,7 +98,13 @@ public class Dialogo : MonoBehaviour
     IEnumerator MostrarDialogo(float time = 0.03f) // Se le pasa el diálogo que queremos y la velocidad del texto
     {
        // Controlador scriptControlador = controlador.GetComponent<Controlador>();
-        panelDialogo.SetActive(true);
+
+        if (numDialogo%2 == 0)
+        {
+            panelDialogo2.SetActive(true);
+        }
+        else panelDialogo.SetActive(true);
+
 
         if (dejarDeHablar)
         {
@@ -115,7 +126,15 @@ public class Dialogo : MonoBehaviour
                 dialogo = new string[]  {JsonConvert.SerializeObject(myDialogosList.dialogos[1].Frase1).Replace("\"", ""),
                                          JsonConvert.SerializeObject(myDialogosList.dialogos[1].Frase2).Replace("\"", "")};
                 break;
+            case 2:
 
+                dialogo = new string[]  {JsonConvert.SerializeObject(myDialogosList.dialogos[2].Frase1).Replace("\"", ""),
+                                         JsonConvert.SerializeObject(myDialogosList.dialogos[2].Frase2).Replace("\"", "")};
+                break;
+            case 3:
+                dialogo = new string[]  {JsonConvert.SerializeObject(myDialogosList.dialogos[3].Frase1).Replace("\"", ""),
+                                         JsonConvert.SerializeObject(myDialogosList.dialogos[3].Frase2).Replace("\"", "")};
+                break;
             default:
                 Debug.Log("No existe el diálogo.");
                 break;
@@ -142,19 +161,35 @@ public class Dialogo : MonoBehaviour
                     if (dialogoActivo)
                     {
                         res = string.Concat(res, dialogo[i][s]);
-                        textoDialogo.text = res;
+
+                        if (numDialogo % 2 == 0)
+                        {
+                            textoDialogo2.text = res;
+                        }
+                        else textoDialogo.text = res;
+
+
                         yield return new WaitForSeconds(time); // Esperar el tiempo indicado
                     }
                     else yield break;
                 }
-                flecha.SetActive(true);
+
+                if (numDialogo % 2 == 0)
+                {
+                    flecha2.SetActive(true);
+                } else flecha.SetActive(true);
+
                 //yield return new WaitForSeconds(0.4f); // Al terminar la frase entera, se esperará para darle tiempo
                 while (continuarDialogo == false)
                 {
                     yield return null;
                 }
 
-                flecha.SetActive(false);
+                if (numDialogo % 2 == 0)
+                {
+                    flecha2.SetActive(false);
+                }
+                else flecha.SetActive(false);
 
                 continuarDialogo = false;
             }
@@ -166,14 +201,31 @@ public class Dialogo : MonoBehaviour
         if (numDialogo == 0)
         {
             numDialogo = 1;
+            panelDialogo2.SetActive(false);
             Hablar();
         }
         else if (numDialogo == 1)
         {
             //gameManager.comenzarDialogo = false;
+            numDialogo = 2;
+            panelDialogo.SetActive(false);
+            Hablar();
+        }
+        else if (numDialogo == 2)
+        {
+            //gameManager.comenzarDialogo = false;
+            numDialogo = 3;
+            panelDialogo2.SetActive(false);
+            Hablar();
+        }
+        else if (numDialogo == 3)
+        {
+            //gameManager.comenzarDialogo = false;
             panelDialogo.SetActive(false);
             dejarDeHablar = true;
-            gameManager.finalEscena = true;
+
+            player.GetComponent<Movement>().enabled = true;
+            //gameManager.finalEscena = true;
         }
 
         if (dejarDeHablar) CerrarDialogo();
@@ -234,17 +286,28 @@ public class Dialogo : MonoBehaviour
             }
 
         }
-        
 
-       // if (Input.GetKey(KeyCode.Return)) Hablar();
 
-            // En el caso de que se toque la pantalla y haya aparecido la fecha
-        if ((flecha.activeSelf && panelSiguiente.Pressed) || flecha.activeSelf && Input.GetKey(KeyCode.Return))
+        // if (Input.GetKey(KeyCode.Return)) Hablar();
+
+        // En el caso de que se toque la pantalla y haya aparecido la fecha
+        if (numDialogo % 2 == 0)
+        {
+            if ((flecha2.activeSelf && panelSiguiente.Pressed) || flecha2.activeSelf && Input.GetKey(KeyCode.Return))
+            {
+                continuarDialogo = true;
+                //scriptControlador.botonSonido();
+
+            }
+        }
+        else if ((flecha.activeSelf && panelSiguiente.Pressed) || flecha.activeSelf && Input.GetKey(KeyCode.Return))
         {
             continuarDialogo = true;
             //scriptControlador.botonSonido();
 
         }
+
+
 
     }
 
