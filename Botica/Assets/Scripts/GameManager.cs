@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     //Creamoss Singleton
-    public static InventoryContorller Instance { get; private set; }
+    public static GameManager Instance { get; private set; }
 
 
     [Header("Scene 1 parameters")]
@@ -37,6 +37,20 @@ public class GameManager : MonoBehaviour
     public void LeaveGame()
     {
         Application.Quit();
+    }
+
+    void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+        
+        if (Instance != null && Instance != this) 
+        { 
+            Destroy(this); 
+        } 
+        else 
+        { 
+            Instance = this; 
+        } 
     }
 
     void Start()
@@ -79,6 +93,26 @@ public class GameManager : MonoBehaviour
             }
 
         }
+    }
+
+    public Item CombineItems(Item item1, Item item2)
+    {
+        foreach (ItemCombined combined in Recipebook)
+        {
+            if (item1 == combined.item1) {
+                if (item2 == combined.item2)
+                {
+                    return combined.itemResult;
+                }
+            }
+            if (item2 == combined.item1) {
+                if (item1 == combined.item2)
+                {
+                    return combined.itemResult;
+                }
+            }
+        }
+        return null;
     }
 
 

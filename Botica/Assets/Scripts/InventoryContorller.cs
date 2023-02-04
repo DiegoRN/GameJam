@@ -11,7 +11,7 @@ public class InventoryContorller : MonoBehaviour
     //public GameObject[] Slots;
     public List<GameObject> Slots;
 
-    //[SerializeField] GameObject SlotPrefab;
+    [SerializeField] GameObject SlotPrefab;
     [SerializeField] int maxSlots;
     public GameObject SlotHolder;
 
@@ -33,32 +33,41 @@ public class InventoryContorller : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+
         theInventory = new Inventory(maxSlots);
-        //Slots = new List<GameObject>();
+        Slots = new List<GameObject>();
     }
 
     public void AddItem(Item ItemObject)
     {
         if (!theInventory.IsFull())
         {
-            //GameObject SlotObject = Instantiate(SlotPrefab, SlotHolder.transform);
-            GameObject SlotObject = Slots[theInventory.GetAmount()];
-            SlotObject.SetActive(true);
-            SlotObject.GetComponent<Slot>().SetItem(ItemObject);
-            //Slots.Add(SlotObject);
+            GameObject SlotObject = Instantiate(SlotPrefab, SlotHolder.transform);
+            //GameObject SlotObject = Slots[theInventory.GetAmount()];
+            //SlotObject.SetActive(true);
+            SlotObject.GetComponentInChildren<Slot>().SetItem(ItemObject);
+            Slots.Add(SlotObject);
             theInventory.AddItem(ItemObject);
         }
     }
 
-    public void DeleteItem(Slot SlotToRemove, int index)
+    public void DeleteItem(Item Item)
     {
         if (theInventory.GetAmount() != 0)
         {
-            Slots.Remove(SlotToRemove.gameObject);
-            //Destroy(SlotToRemove.gameObject);
-            Slots[index].SetActive(false);
-            theInventory.RemoveItem(SlotToRemove.myItem);
-            print("Quitamos el item");
+            GameObject SlotToRemove;
+            foreach(GameObject slot in Slots)
+            {
+                if (slot.GetComponent<Slot>().myItem == Item)
+                {
+                    SlotToRemove = slot;
+                    //Slots.Remove(SlotToRemove.gameObject);
+                    Destroy(SlotToRemove.gameObject);
+                    //Slots[index].SetActive(false);
+                    theInventory.RemoveItem(Item);
+                    print("Quitamos el item");
+                }
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private GameObject ItemObjectPrefab;
     [SerializeField] private TextMeshProUGUI description;
-    [SerializeField] private Canvas canvas;
+    //[SerializeField] private Canvas canvas;
 
     public Item myItem;
 
@@ -52,7 +52,7 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         GameObject theObject = Instantiate(ItemObjectPrefab, Vector3.zero, Quaternion.identity);
         theObject.GetComponent<ItemObject>().SetItem(myItem);
-        InventoryContorller.Instance.DeleteItem(this, index);
+        InventoryContorller.Instance.DeleteItem(myItem);
     }
 
     public void ShowDescription()
