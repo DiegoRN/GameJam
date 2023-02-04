@@ -115,6 +115,9 @@ public class GameManager : MonoBehaviour
         if (activarMovimiento21)
         {
             player.GetComponent<AgentMove>().enabled = true;
+        } else
+        { 
+            player.GetComponent<AgentMove>().enabled = false;
         }
     }
 
@@ -137,6 +140,8 @@ public class GameManager : MonoBehaviour
         }
         return null;
     }
+
+
 
 
 

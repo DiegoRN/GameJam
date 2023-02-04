@@ -39,6 +39,14 @@ public class Dialogo2 : MonoBehaviour
 
     bool primeraVez = true;
 
+    public bool objetoObtenido;
+    public GameObject personaje2;
+
+    public GameObject fadeIn;
+    public GameObject fadeOut;
+
+    public Vector3 posicionFinalPersonaje = new Vector3(-1.60000002f, 0.4833333f, -0.5f);
+
     [System.Serializable]
     public class Dialogos
     {
@@ -271,6 +279,20 @@ public class Dialogo2 : MonoBehaviour
 
     }
 
+    IEnumerator FadeInFadeOut()
+    {
+        
+        fadeIn.SetActive(true);
+        yield return new WaitForSeconds(fadeIn.GetComponent<SceneFader>().fadeSpeed);
+        fadeIn.SetActive(false);
+        personaje2.SetActive(true);
+        //player.transform.position = posicionFinalPersonaje;
+        //gameManager.activarMovimiento21 = false;
+        //instantiate(player, player.transform.position, player.transform.rotation);
+        fadeOut.SetActive(true);
+        yield return new WaitForSeconds(fadeIn.GetComponent<SceneFader>().fadeSpeed);
+    }
+
     void Update()
     {
         //Controlador scriptControlador = controlador.GetComponent<Controlador>();
@@ -286,6 +308,12 @@ public class Dialogo2 : MonoBehaviour
                 primeraVez = false;
             }
 
+        }
+
+        if (objetoObtenido)
+        {
+            // Fundido en negro y aparición de personaje
+            StartCoroutine(FadeInFadeOut());
         }
 
 

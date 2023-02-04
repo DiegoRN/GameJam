@@ -160,10 +160,20 @@ MonoBehaviour:
   ouroborosImage: {fileID: 0}
   ouroborosSpeed: 0
   fadeIn: {fileID: 1141140702}
+  numVecesEscena2: 1
+  primeraVezHablaEscena21: 1
+  primeraVezHablaEscena22: 1
+  primeraVezHablaEscena23: 1
+  comenzarDialogo21: 0
+  comenzarDialogo22: 0
+  comenzarDialogo23: 0
+  activarMovimiento21: 0
+  player: {fileID: 0}
   creditsSpeed: 70
   creditsText: {fileID: 1407496250}
-  finalCreditsTime: 10
+  finalCreditsTime: 15
   creditsTime: 0
+  Recipebook: []
 --- !u!4 &199562706
 Transform:
   m_ObjectHideFlags: 0
