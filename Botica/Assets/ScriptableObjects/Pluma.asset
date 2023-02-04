@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d728f462328d3f4bb778c016f028955, type: 3}
   m_Name: Pluma
   m_EditorClassIdentifier: 
-  ItemMesh: {fileID: 0}
-  ItemImage: {fileID: 0}
-  ItemName: 
-  ItemDescription: 
+  ItemMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  ItemImage: {fileID: 21300000, guid: 42ddff3923302d54181e0f204e5a6d71, type: 3}
+  ItemName: Pluma
+  ItemDescription: Es una pluma, si consigues tinta puedes escribir
