@@ -5,12 +5,13 @@ using UnityEngine;
 public class Point : MonoBehaviour
 {
     public List<Item> itemsToDo;
-    public Transform[] pointsToDrop;
+    public Transform pointsToDrop;
 
-    // Start is called before the first frame update
-    void Start()
+    private int maxCapacity;
+
+
+    public void PutItem(Item item)
     {
         
     }
-
 }

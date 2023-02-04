@@ -11,7 +11,7 @@ public class InventoryContorller : MonoBehaviour
     //public GameObject[] Slots;
     public List<GameObject> Slots;
 
-    [SerializeField] GameObject SlotPrefab;
+    //[SerializeField] GameObject SlotPrefab;
     [SerializeField] int maxSlots;
     public GameObject SlotHolder;
 
@@ -33,34 +33,29 @@ public class InventoryContorller : MonoBehaviour
     void Start()
     {
         theInventory = new Inventory(maxSlots);
-        Slots = new List<GameObject>();
-
-        print("Creado el inventario, tiene "+maxSlots+" slots");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //Slots = new List<GameObject>();
     }
 
     public void AddItem(Item ItemObject)
     {
         if (!theInventory.IsFull())
         {
-            GameObject SlotObject = Instantiate(SlotPrefab, SlotHolder.transform);
+            //GameObject SlotObject = Instantiate(SlotPrefab, SlotHolder.transform);
+            GameObject SlotObject = Slots[theInventory.GetAmount()];
+            SlotObject.SetActive(true);
             SlotObject.GetComponent<Slot>().SetItem(ItemObject);
-            Slots.Add(SlotObject);
+            //Slots.Add(SlotObject);
             theInventory.AddItem(ItemObject);
         }
     }
 
-    public void DeleteItem(Slot SlotToRemove)
+    public void DeleteItem(Slot SlotToRemove, int index)
     {
         if (theInventory.GetAmount() != 0)
         {
             Slots.Remove(SlotToRemove.gameObject);
-            Destroy(SlotToRemove.gameObject);
+            //Destroy(SlotToRemove.gameObject);
+            Slots[index].SetActive(false);
             theInventory.RemoveItem(SlotToRemove.myItem);
             print("Quitamos el item");
         }
