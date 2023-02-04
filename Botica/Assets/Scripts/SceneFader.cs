@@ -10,7 +10,8 @@ public class SceneFader : MonoBehaviour
 	public Image fadeUIImage;
 	public bool isOut = true;
 	public float fadeSpeed = 0.8f;
-
+	public bool changeSceneAfterFadeIn = false;
+	public string sceneName;
 	public enum FadeDirection
 	{
 		In, //Alpha = 1
@@ -18,11 +19,19 @@ public class SceneFader : MonoBehaviour
 	}
 	void OnEnable()
 	{
-		if(isOut){
-			StartCoroutine(Fade(FadeDirection.Out));
-		} else{
-			StartCoroutine(Fade(FadeDirection.In));
+		if(changeSceneAfterFadeIn){
+			StartCoroutine(FadeAndLoadScene(FadeDirection.In, sceneName));
+		} else {
+			if (isOut)
+			{
+				StartCoroutine(Fade(FadeDirection.Out));
+			}
+			else
+			{
+				StartCoroutine(Fade(FadeDirection.In));
+			}
 		}
+		
 	}
 
 	private IEnumerator Fade(FadeDirection fadeDirection)

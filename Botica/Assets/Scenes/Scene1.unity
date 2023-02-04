@@ -227,7 +227,7 @@ MonoBehaviour:
   finalEscena: 0
   ouroborosImage: {fileID: 1794993433}
   ouroborosSpeed: 0
-  fadeIn: {fileID: 0}
+  fadeIn: {fileID: 381859402}
 --- !u!4 &251527899
 Transform:
   m_ObjectHideFlags: 0
@@ -338,8 +338,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: FadeIn
       objectReference: {fileID: 0}
+    - target: {fileID: 2182150994482376215, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: sceneName
+      value: ObjectInteraction
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182150994482376215, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: changeSceneAfterFadeIn
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+--- !u!1 &381859402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2182150994482376214, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+  m_PrefabInstance: {fileID: 370460612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &397128697
 GameObject:
   m_ObjectHideFlags: 0
