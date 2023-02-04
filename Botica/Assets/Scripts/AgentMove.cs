@@ -8,6 +8,7 @@ public class AgentMove : MonoBehaviour
 
     public NavMeshAgent agent;
     private GameObject objectSeen;
+    private GameObject pointSeen;
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -17,6 +18,7 @@ public class AgentMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.LookAt(new Vector3(agent.pathEndPosition.x, transform.position.y, agent.pathEndPosition.z));
         if (Input.GetMouseButtonDown(0))
         {
             if (objectSeen)
@@ -35,19 +37,37 @@ public class AgentMove : MonoBehaviour
         {
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("whatIsInteractable"))
             {
+                if(objectSeen) objectSeen.GetComponent<InteractionObject>().DeactivateImage();
                 hit.collider.gameObject.GetComponent<InteractionObject>().ActivateImage();
                 objectSeen = hit.collider.gameObject;
+            } else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("whatIsPoint"))
+            {
+                if (pointSeen) pointSeen.GetComponent<InteractionPoint>().DeactivateImage();
+                hit.collider.gameObject.GetComponent<InteractionPoint>().ActivateImage();
+                pointSeen = hit.collider.gameObject;
             }
             else if (objectSeen)
             {
                 objectSeen.GetComponentInChildren<InteractionObject>().DeactivateImage();
                 objectSeen = null;
             }
+            else if (pointSeen)
+            {
+                pointSeen.GetComponentInChildren<InteractionPoint>().DeactivateImage();
+                pointSeen = null;
+            }
         }
-        else if (objectSeen)
+        else 
         {
-            objectSeen.GetComponentInChildren<InteractionObject>().DeactivateImage();
-            objectSeen = null;
+            if (objectSeen) {
+                objectSeen.GetComponentInChildren<InteractionObject>().DeactivateImage();
+                objectSeen = null;
+            }
+            if (pointSeen)
+            {
+                pointSeen.GetComponentInChildren<InteractionPoint>().DeactivateImage();
+                pointSeen = null;
+            }
         }
     }
 
@@ -55,7 +75,7 @@ public class AgentMove : MonoBehaviour
     {
         //print("Busco algo..");
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        int layerMask = (1 << LayerMask.NameToLayer("whatIsGround")) | (1 << LayerMask.NameToLayer("whatIsInteractable"));
+        int layerMask = (1 << LayerMask.NameToLayer("whatIsGround")) | (1 << LayerMask.NameToLayer("whatIsInteractable") | (1 << LayerMask.NameToLayer("whatIsPoint")));
         return Physics.Raycast(ray, out hit, 1000f, layerMask);
     }
 
@@ -64,5 +84,9 @@ public class AgentMove : MonoBehaviour
         ItemObject itemClicked = objectClicked.GetComponent<ItemObject>();
         if (itemClicked)
             itemClicked.Interactuate();
+    }
+
+    public void GoToPoint(Vector3 position){
+
     }
 }
