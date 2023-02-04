@@ -1176,9 +1176,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0e0024674c6ae4c970ebeba04160b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intro: {fileID: 0}
   capa1: {fileID: 8300000, guid: 9d4a59bf7482e5f4993fa25a185beee8, type: 3}
   capa2: {fileID: 8300000, guid: e291b720cc7ff4d46b3c158701e0c1ff, type: 3}
   capa3: {fileID: 8300000, guid: b1ea1c5730af5eb4d81babf42a233878, type: 3}
+  ouroboros: {fileID: 8300000, guid: 54be93c8fde245d4ca605b7f302b7f30, type: 3}
   bchangeTrack: 0
 --- !u!82 &1557956753
 AudioSource:
@@ -1467,6 +1469,7 @@ MonoBehaviour:
   creditsText: {fileID: 0}
   finalCreditsTime: 0
   creditsTime: 0
+  Recipebook: []
 --- !u!4 &1817693472
 Transform:
   m_ObjectHideFlags: 0
