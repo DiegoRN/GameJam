@@ -11,11 +11,15 @@ public class GameManager : MonoBehaviour
     [Header("Scene 1 parameters")]
     public GameObject client;
     public Vector3 posicionFinalCliente;
-    public float speed;
+    public float clientSpeed;
     public bool comenzarDialogo;
+    public bool finalEscena;
+    public GameObject ouroborosImage;
+    public float ouroborosSpeed;
 
     public void GoToScene(string SceneName){
         SceneManager.LoadScene(SceneName);
+        Time.timeScale = 1f;
     }
 
     public void LeaveGame()
@@ -28,8 +32,15 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Scene1")
         {
-            client.transform.position = Vector3.MoveTowards(client.transform.position, posicionFinalCliente, speed * Time.deltaTime);
+            client.transform.position = Vector3.MoveTowards(client.transform.position, posicionFinalCliente, clientSpeed * Time.deltaTime);
             if (client.transform.position == posicionFinalCliente) comenzarDialogo = true;
+
+            if (finalEscena)
+            {
+                ouroborosImage.SetActive(true);
+                ouroborosImage.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * ouroborosSpeed, Space.World);
+                ouroborosSpeed += 0.8f;
+            }
 
         }
 
