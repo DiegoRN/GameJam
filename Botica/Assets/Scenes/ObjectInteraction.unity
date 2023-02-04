@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -231,6 +231,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2182150994482376209, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2182150994482376211, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -809,6 +813,10 @@ MonoBehaviour:
   ouroborosImage: {fileID: 0}
   ouroborosSpeed: 0
   fadeIn: {fileID: 0}
+  creditsSpeed: 0
+  creditsText: {fileID: 0}
+  finalCreditsTime: 0
+  creditsTime: 0
 --- !u!4 &1610166669
 Transform:
   m_ObjectHideFlags: 0
