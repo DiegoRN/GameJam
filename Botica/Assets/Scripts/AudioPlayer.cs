@@ -8,9 +8,12 @@ public class AudioPlayer : MonoBehaviour
     Coroutine currentActiveFade = null;
 
     AudioSource audioSource;
+    [SerializeField] AudioClip intro;
     [SerializeField] AudioClip capa1;
     [SerializeField] AudioClip capa2;
     [SerializeField] AudioClip capa3;
+    [SerializeField] AudioClip ouroboros;
+
     static AudioPlayer instance;
 
     public bool bchangeTrack;
@@ -42,19 +45,23 @@ public class AudioPlayer : MonoBehaviour
         }
     }
 
-    public void changeTrack()
+    public void changeTrack(string track)
     {
         bchangeTrack = true;
         volume = audioSource.volume;
-        StartCoroutine(changeTrackCoroutine());
+        StartCoroutine(changeTrackCoroutine(track));
     }
 
-    private IEnumerator changeTrackCoroutine()
+    private IEnumerator changeTrackCoroutine(string track)
     {
-        yield return FadeOut(2f);
-        audioSource.clip = capa3;
+        yield return FadeOut(.5f);
+        if (track == "capa1") audioSource.clip = capa1;
+        if (track == "capa2") audioSource.clip = capa2;
+        if (track == "capa3") audioSource.clip = capa3;
+        if (track == "ouroboros") audioSource.clip = ouroboros;
+        if (track == "intro") audioSource.clip = intro;
         audioSource.Play();
-        yield return FadeIn(1.5f);
+        yield return FadeIn(.1f);
         bchangeTrack = false;
     }
 
@@ -75,7 +82,7 @@ public class AudioPlayer : MonoBehaviour
 
     public Coroutine Fade(float target, float time)
     {
-        if (currentActiveFade != null)   // para que no haya un caso en el que las dos corrutinas se activen a la vez al ir y volver rápido de un nivel
+        if (currentActiveFade != null)   // para que no haya un caso en el que las dos corrutinas se activen a la vez al ir y volver rï¿½pido de un nivel
         {
             StopCoroutine(currentActiveFade);
         }
@@ -87,7 +94,7 @@ public class AudioPlayer : MonoBehaviour
     {
         while (!Mathf.Approximately(volume, target))
         {
-            volume = Mathf.MoveTowards(volume, target, Time.deltaTime / time);  // suma o resta dependiendo del target. Así me ahorro repetición de código
+            volume = Mathf.MoveTowards(volume, target, Time.deltaTime / time);  // suma o resta dependiendo del target. Asï¿½ me ahorro repeticiï¿½n de cï¿½digo
             audioSource.volume = volume;
             yield return null;
         }
