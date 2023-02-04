@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    //Creamoss Singleton
+    public static InventoryContorller Instance { get; private set; }
 
 
     [Header("Scene 1 parameters")]
@@ -24,6 +26,9 @@ public class GameManager : MonoBehaviour
     public float finalCreditsTime;
     public float creditsTime;
 
+    [Header("Recipebook")]
+    public List<ItemCombined> Recipebook;
+
     public void GoToScene(string SceneName){
         SceneManager.LoadScene(SceneName);
         Time.timeScale = 1f;
@@ -32,6 +37,11 @@ public class GameManager : MonoBehaviour
     public void LeaveGame()
     {
         Application.Quit();
+    }
+
+    void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 
 

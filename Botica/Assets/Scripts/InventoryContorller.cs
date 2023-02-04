@@ -32,6 +32,7 @@ public class InventoryContorller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         theInventory = new Inventory(maxSlots);
         //Slots = new List<GameObject>();
     }
