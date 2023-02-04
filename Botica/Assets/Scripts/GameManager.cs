@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
+
+    [Header("Scene 1 parameters")]
     public GameObject client;
     public Vector3 posicionFinalCliente;
     public float speed;
@@ -27,9 +29,10 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Scene1")
         {
             client.transform.position = Vector3.MoveTowards(client.transform.position, posicionFinalCliente, speed * Time.deltaTime);
+            if (client.transform.position == posicionFinalCliente) comenzarDialogo = true;
+
         }
 
-        if (client.transform.position == posicionFinalCliente) comenzarDialogo = true;
     }
 
 
