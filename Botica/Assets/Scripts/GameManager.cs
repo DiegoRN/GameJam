@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public bool finalEscena;
     public GameObject ouroborosImage;
     public float ouroborosSpeed;
+    public GameObject fadeIn;
 
     public void GoToScene(string SceneName){
         SceneManager.LoadScene(SceneName);
@@ -39,7 +40,11 @@ public class GameManager : MonoBehaviour
             {
                 ouroborosImage.SetActive(true);
                 ouroborosImage.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * ouroborosSpeed, Space.World);
-                ouroborosSpeed += 0.8f;
+                if(ouroborosSpeed < 1000){
+                    ouroborosSpeed += Time.deltaTime * 250f;
+                } else{
+                    fadeIn.SetActive(true);
+                }
             }
 
         }
