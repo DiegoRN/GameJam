@@ -20,6 +20,17 @@ public class GameManager : MonoBehaviour
     public float ouroborosSpeed;
     public GameObject fadeIn;
 
+    [Header("Scene 2 parameters")]
+    public int numVecesEscena2 = 1;
+    public bool primeraVezHablaEscena21 = true;
+    public bool primeraVezHablaEscena22 = true;
+    public bool primeraVezHablaEscena23 = true;
+    public bool comenzarDialogo21;
+    public bool comenzarDialogo22;
+    public bool comenzarDialogo23;
+    public bool activarMovimiento21 = false;
+    public GameObject player;
+
     [Header("Scene Credits parameters")]
     public float creditsSpeed;
     public GameObject creditsText;
@@ -93,6 +104,18 @@ public class GameManager : MonoBehaviour
             }
 
         }
+
+
+        // Primera vez que se viaja a la escena 2
+        if (numVecesEscena2 == 1)
+        {
+            //if (primeraVezHablaEscena21) ;
+        }
+
+        if (activarMovimiento21)
+        {
+            player.GetComponent<AgentMove>().enabled = true;
+        }
     }
 
     public Item CombineItems(Item item1, Item item2)
@@ -114,6 +137,8 @@ public class GameManager : MonoBehaviour
         }
         return null;
     }
+
+
 
 
 }
