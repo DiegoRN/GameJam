@@ -17,7 +17,6 @@ public class Dialogo : MonoBehaviour
     Coroutine corrutina;
     public bool continuarDialogo = false;
     public FixedTouchField panelSiguiente;
-    public FixedTouchField panelSiguiente2;
 
     //public GameObject controlador;
     public GameObject flecha;
@@ -294,7 +293,7 @@ public class Dialogo : MonoBehaviour
         // En el caso de que se toque la pantalla y haya aparecido la fecha
         if (numDialogo % 2 == 0)
         {
-            if ((flecha2.activeSelf && panelSiguiente2.Pressed) || flecha2.activeSelf && Input.GetKey(KeyCode.Return))
+            if ((flecha2.activeSelf && panelSiguiente.Pressed) || flecha2.activeSelf && Input.GetKey(KeyCode.Return))
             {
                 continuarDialogo = true;
                 //scriptControlador.botonSonido();
