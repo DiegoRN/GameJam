@@ -112,13 +112,18 @@ public class GameManager : MonoBehaviour
             //if (primeraVezHablaEscena21) ;
         }
 
-        if (activarMovimiento21)
+        if (player)
         {
-            player.GetComponent<AgentMove>().enabled = true;
-        } else
-        { 
-            player.GetComponent<AgentMove>().enabled = false;
+            if (activarMovimiento21)
+            {
+                player.GetComponent<AgentMove>().enabled = true;
+            }
+            else
+            {
+                player.GetComponent<AgentMove>().enabled = false;
+            }
         }
+        
     }
 
     public Item CombineItems(Item item1, Item item2)

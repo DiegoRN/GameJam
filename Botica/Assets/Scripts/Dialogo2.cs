@@ -44,8 +44,13 @@ public class Dialogo2 : MonoBehaviour
 
     public GameObject fadeIn;
     public GameObject fadeOut;
+    public GameObject fadeInChangeScene;
 
     public Vector3 posicionFinalPersonaje = new Vector3(-1.60000002f, 0.4833333f, -0.5f);
+
+    public GameObject panelBotones;
+
+    public GameObject prefabPlayer;
 
     [System.Serializable]
     public class Dialogos
@@ -100,6 +105,8 @@ public class Dialogo2 : MonoBehaviour
             dialogoActivo = false;
             corrutina = StartCoroutine(MostrarDialogo()); // Lanzar corrutina para pasarle el diálogo que queremos
         }
+
+        if (numDialogo == 4) panelBotones.SetActive(false);
     }
 
     IEnumerator MostrarDialogo(float time = 0.03f) // Se le pasa el diálogo que queremos y la velocidad del texto
@@ -225,15 +232,30 @@ public class Dialogo2 : MonoBehaviour
             gameManager.activarMovimiento21 = true;
             gameManager.comenzarDialogo21 = false;
             primeraVez = true;
+            numDialogo = 3;
         }
         else if (numDialogo == 3)
         {
             //gameManager.comenzarDialogo = false;
-            numDialogo = 3;
+            numDialogo = 4;
             panelDialogo.SetActive(false);
             dejarDeHablar = true;
 
-            player.GetComponent<AgentMove>().enabled = true;
+            panelBotones.SetActive(true);
+            //gameManager.finalEscena = true;
+        }
+        else if (numDialogo == 4)
+        {
+
+            //gameManager.comenzarDialogo = false;
+            numDialogo = 5;
+            panelDialogo2.SetActive(false);
+            dejarDeHablar = true;
+
+            panelBotones.SetActive(false);
+
+            fadeInChangeScene.SetActive(true);
+
             //gameManager.finalEscena = true;
         }
 
@@ -281,16 +303,21 @@ public class Dialogo2 : MonoBehaviour
 
     IEnumerator FadeInFadeOut()
     {
-        
+        gameManager.activarMovimiento21 = false;
         fadeIn.SetActive(true);
         yield return new WaitForSeconds(fadeIn.GetComponent<SceneFader>().fadeSpeed);
         fadeIn.SetActive(false);
         personaje2.SetActive(true);
         //player.transform.position = posicionFinalPersonaje;
-        //gameManager.activarMovimiento21 = false;
         //instantiate(player, player.transform.position, player.transform.rotation);
+        Destroy(player);
+        Instantiate(prefabPlayer, posicionFinalPersonaje, Quaternion.identity);
         fadeOut.SetActive(true);
-        yield return new WaitForSeconds(fadeIn.GetComponent<SceneFader>().fadeSpeed);
+        yield return new WaitForSeconds(fadeOut.GetComponent<SceneFader>().fadeSpeed);
+        //fadeOut.SetActive(false);
+        gameManager.comenzarDialogo21 = true;
+        primeraVez = true;
+
     }
 
     void Update()
@@ -312,6 +339,7 @@ public class Dialogo2 : MonoBehaviour
 
         if (objetoObtenido)
         {
+            objetoObtenido = false;
             // Fundido en negro y aparición de personaje
             StartCoroutine(FadeInFadeOut());
         }
