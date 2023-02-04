@@ -23,6 +23,11 @@ public class InteractionObject : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.G)){
                 //Añadir al inventario
             }
+            if(Time.timeScale == 0f){
+                interactionButton.SetActive(false);
+            } else{
+                interactionButton.SetActive(true);
+            }
         }
     }
     private void OnTriggerEnter(Collider other)
