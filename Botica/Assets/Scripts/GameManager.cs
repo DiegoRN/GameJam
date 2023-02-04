@@ -18,6 +18,12 @@ public class GameManager : MonoBehaviour
     public float ouroborosSpeed;
     public GameObject fadeIn;
 
+    [Header("Scene Credits parameters")]
+    public float creditsSpeed;
+    public GameObject creditsText;
+    public float finalCreditsTime;
+    public float creditsTime;
+
     public void GoToScene(string SceneName){
         SceneManager.LoadScene(SceneName);
         Time.timeScale = 1f;
@@ -40,15 +46,29 @@ public class GameManager : MonoBehaviour
             {
                 ouroborosImage.SetActive(true);
                 ouroborosImage.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * ouroborosSpeed, Space.World);
-                if(ouroborosSpeed < 1000){
+                if (ouroborosSpeed < 1000)
+                {
                     ouroborosSpeed += Time.deltaTime * 250f;
-                } else{
+                }
+                else
+                {
                     fadeIn.SetActive(true);
                 }
             }
 
         }
 
+        if (SceneManager.GetActiveScene().name == "Credits")
+        {
+            creditsText.transform.Translate(Vector3.up * Time.deltaTime * creditsSpeed, Space.World);
+            creditsTime += Time.deltaTime;
+
+            if (creditsTime >= finalCreditsTime)
+            {
+                fadeIn.SetActive(true);
+            }
+
+        }
     }
 
 
