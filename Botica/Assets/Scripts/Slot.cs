@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
     [SerializeField] private Image imageItem;
     [SerializeField] private Image imageGroup;
@@ -38,6 +38,28 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         transform.SetParent(parentAfterDrag);
         imageItem.raycastTarget = true;
         imageGroup.raycastTarget = true;
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        GameObject dropped = eventData.pointerDrag;
+        Slot draggableItem = dropped.GetComponent<Slot>();
+
+        print("drop");
+
+        if (draggableItem != null && this != null)
+        {
+            print("Combinamos: " + draggableItem.myItem.ItemName + " con "+ myItem.ItemName);
+            Item result = GameManager.Instance.CombineItems(draggableItem.myItem, this.myItem);
+
+            if (result != null)
+            {
+                print("tenemos una combinación, el resultado es: "+result.name);
+                InventoryContorller.Instance.DeleteItem(draggableItem.myItem);
+                InventoryContorller.Instance.DeleteItem(this.myItem);
+                InventoryContorller.Instance.AddItem(result);
+            }
+        }
     }
 
     public void SetItem(Item theItem)
