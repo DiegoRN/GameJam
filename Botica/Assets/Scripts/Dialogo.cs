@@ -224,7 +224,7 @@ public class Dialogo : MonoBehaviour
             panelDialogo.SetActive(false);
             dejarDeHablar = true;
 
-            player.GetComponent<Movement>().enabled = true;
+            player.GetComponent<AgentMove>().enabled = true;
             //gameManager.finalEscena = true;
         }
 
