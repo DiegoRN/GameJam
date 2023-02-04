@@ -1,12 +1,20 @@
 {
     "dialogos": [
         {
-            "Frase1": "Remedios: Frase1",
-            "Frase2": "Remedios: Frase2"
+            "Frase1": "Martin: I heard stories about your wizardry, witch.",
+            "Frase2": "Martin: I am an unhappy man in need, this madness is what's driving me to ask for help."
         },
         {
-            "Frase1": "Cliente1: Hola, soy Pepito.",
-            "Frase2": "Ejemplo diálogo."
+            "Frase1": "Remedios: With rage and insults you ask for my help?",
+            "Frase2": "Remedios: Without a doubt you are a client, ha ha."
+        },
+	  {
+            "Frase1": "Martin: I only long to go back to that day.",
+            "Frase2": "Martin: Please, I beg you!!"
+        },
+        {
+            "Frase1": "Remedios: So you ask to go back? So be it.",
+            "Frase2": "Remedios: I shall prepare everything at once. I need my roots."
         }
     ]
 }
