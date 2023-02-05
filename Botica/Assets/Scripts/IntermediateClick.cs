@@ -24,10 +24,6 @@ public class IntermediateClick : MonoBehaviour
 
     private bool LookForGameObject(out RaycastHit hit)
     {
-<<<<<<< Updated upstream
-=======
-        print("Busco algo..");
->>>>>>> Stashed changes
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         return Physics.Raycast(ray, out hit);
     }
