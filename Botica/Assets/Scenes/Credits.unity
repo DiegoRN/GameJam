@@ -170,9 +170,8 @@ MonoBehaviour:
   player: {fileID: 0}
   creditsSpeed: 120
   creditsText: {fileID: 1407496250}
-  finalCreditsTime: 30
+  finalCreditsTime: 25
   creditsTime: 0
-  Recipebook: []
 --- !u!4 &199562706
 Transform:
   m_ObjectHideFlags: 0
