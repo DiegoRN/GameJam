@@ -4,14 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
 
-public class Dialogo2 : MonoBehaviour
+public class Dialogo3 : MonoBehaviour
 {
     public GameObject panelDialogo;
-    public GameObject panelDialogo2;
     string[] dialogo;
 
     public Text textoDialogo;
-    public Text textoDialogo2;
     public bool dialogoActivo;
 
     Coroutine corrutina;
@@ -20,12 +18,10 @@ public class Dialogo2 : MonoBehaviour
 
     //public GameObject controlador;
     public GameObject flecha;
-    public GameObject flecha2;
 
     public int numDialogo;
 
     public GameObject player;
-
 
     public bool dejarDeHablar = true;
 
@@ -39,18 +35,17 @@ public class Dialogo2 : MonoBehaviour
 
     bool primeraVez = true;
 
-    public bool objetoObtenido;
-    public GameObject personaje2;
-
     public GameObject fadeIn;
     public GameObject fadeOut;
     public GameObject fadeInChangeScene;
 
-    public Vector3 posicionFinalPersonaje = new Vector3(-1.60000002f, 0.4833333f, -0.5f);
 
-    public GameObject panelBotones;
-
-    public GameObject prefabPlayer;
+    // Escena3
+    public bool haInteracctuadoConOllin;
+    public bool haInteracctuadoConBaul;
+    public bool haInteracctuadoConEstanteria;
+    public bool interaccionConBaul;
+    public bool llaveUsada;
 
     [System.Serializable]
     public class Dialogos
@@ -74,18 +69,7 @@ public class Dialogo2 : MonoBehaviour
 
     void Start()
     {
-
-        //var juegoCargado = Variables.Instance.StringActiveBetweenScenes;
-
-        /*if (numMapa == 0)
-        {
             myDialogosList = JsonUtility.FromJson<DialogosList>(jsonDialogoMapa1.text);
-        }
-        else if (datos.pronombre == 2)
-        {*/
-            myDialogosList = JsonUtility.FromJson<DialogosList>(jsonDialogoMapa1.text);
-
-       
 
     }
 
@@ -95,7 +79,6 @@ public class Dialogo2 : MonoBehaviour
         // la corrutina se nos cerrará por los if, y se cancelará la corrutina activa con CerrarDialogo()
         // Además, se hará una espera para que no se solapen los textos
 
-        //gameManager.activarMovimiento21 = false;
         if (dialogoActivo)
         {
             if (dejarDeHablar) CerrarDialogo();
@@ -107,26 +90,18 @@ public class Dialogo2 : MonoBehaviour
             corrutina = StartCoroutine(MostrarDialogo()); // Lanzar corrutina para pasarle el diálogo que queremos
         }
 
-        if (numDialogo == 4) panelBotones.SetActive(false);
     }
 
     IEnumerator MostrarDialogo(float time = 0.03f) // Se le pasa el diálogo que queremos y la velocidad del texto
     {
-       // Controlador scriptControlador = controlador.GetComponent<Controlador>();
 
-        if (numDialogo%2 == 0)
-        {
-            panelDialogo2.SetActive(true);
-        }
-        else panelDialogo.SetActive(true);
+        panelDialogo.SetActive(true);
 
 
         if (dejarDeHablar)
         {
 
         }
-
-       // scriptControlador.jugador.SetActive(false);
 
         // DIALOGO SE rellenará dependiendo del valor de numero
         switch (numDialogo)
@@ -148,6 +123,9 @@ public class Dialogo2 : MonoBehaviour
                 break;
             case 4:
                 dialogo = new string[]  {JsonConvert.SerializeObject(myDialogosList.dialogos[4].Frase1).Replace("\"", "")};
+                break;
+            case 5:
+                dialogo = new string[] { JsonConvert.SerializeObject(myDialogosList.dialogos[5].Frase1).Replace("\"", "") };
                 break;
             default:
                 Debug.Log("No existe el diálogo.");
@@ -176,11 +154,7 @@ public class Dialogo2 : MonoBehaviour
                     {
                         res = string.Concat(res, dialogo[i][s]);
 
-                        if (numDialogo % 2 == 0)
-                        {
-                            textoDialogo2.text = res;
-                        }
-                        else textoDialogo.text = res;
+                        textoDialogo.text = res;
 
 
                         yield return new WaitForSeconds(time); // Esperar el tiempo indicado
@@ -188,22 +162,14 @@ public class Dialogo2 : MonoBehaviour
                     else yield break;
                 }
 
-                if (numDialogo % 2 == 0)
-                {
-                    flecha2.SetActive(true);
-                } else flecha.SetActive(true);
+                flecha.SetActive(true);
 
-                //yield return new WaitForSeconds(0.4f); // Al terminar la frase entera, se esperará para darle tiempo
                 while (continuarDialogo == false)
                 {
                     yield return null;
                 }
 
-                if (numDialogo % 2 == 0)
-                {
-                    flecha2.SetActive(false);
-                }
-                else flecha.SetActive(false);
+                flecha.SetActive(false);
 
                 continuarDialogo = false;
             }
@@ -214,50 +180,30 @@ public class Dialogo2 : MonoBehaviour
 
         if (numDialogo == 0)
         {
-            numDialogo = 1;
-            panelDialogo2.SetActive(false);
-            Hablar();
+            panelDialogo.SetActive(false);
         }
         else if (numDialogo == 1)
         {
-            //gameManager.comenzarDialogo = false;
-            numDialogo = 2;
             panelDialogo.SetActive(false);
-            Hablar();
         }
         else if (numDialogo == 2)
         {
-            //gameManager.comenzarDialogo = false;
-            panelDialogo2.SetActive(false);
-            dejarDeHablar = true;
-            gameManager.activarMovimiento21 = true;
-            gameManager.comenzarDialogo21 = false;
-            primeraVez = true;
-            numDialogo = 3;
+            panelDialogo.SetActive(false);
         }
         else if (numDialogo == 3)
         {
-            //gameManager.comenzarDialogo = false;
-            numDialogo = 4;
             panelDialogo.SetActive(false);
-            dejarDeHablar = true;
-
-            panelBotones.SetActive(true);
-            //gameManager.finalEscena = true;
         }
         else if (numDialogo == 4)
         {
 
-            //gameManager.comenzarDialogo = false;
             numDialogo = 5;
-            panelDialogo2.SetActive(false);
+            panelDialogo.SetActive(false);
             dejarDeHablar = true;
 
-            panelBotones.SetActive(false);
+            gameManager.finalEscena = true;
 
             //fadeInChangeScene.SetActive(true);
-
-            gameManager.finalEscena = true;
         }
 
         if (dejarDeHablar) CerrarDialogo();
@@ -280,15 +226,6 @@ public class Dialogo2 : MonoBehaviour
     // y esconder el panel del diálogo
     public void CerrarDialogo()
     {
-        /*Controlador scriptControlador = controlador.GetComponent<Controlador>();
-
-        scriptControlador.jugador.SetActive(true);
-        dialogoActivo = false;*/
-
-        if (numEscena == 1)
-        {
-
-        }
 
         if (corrutina != null)
         {
@@ -302,30 +239,12 @@ public class Dialogo2 : MonoBehaviour
 
     }
 
-    IEnumerator FadeInFadeOut()
-    {
-        gameManager.activarMovimiento21 = false;
-        fadeIn.SetActive(true);
-        yield return new WaitForSeconds(fadeIn.GetComponent<SceneFader>().fadeSpeed);
-        fadeIn.SetActive(false);
-        personaje2.SetActive(true);
-        //player.transform.position = posicionFinalPersonaje;
-        //instantiate(player, player.transform.position, player.transform.rotation);
-        Destroy(player);
-        Instantiate(prefabPlayer, posicionFinalPersonaje, Quaternion.identity);
-        fadeOut.SetActive(true);
-        yield return new WaitForSeconds(fadeOut.GetComponent<SceneFader>().fadeSpeed);
-        //fadeOut.SetActive(false);
-        gameManager.comenzarDialogo21 = true;
-        primeraVez = true;
-
-    }
-
     void Update()
     {
         //Controlador scriptControlador = controlador.GetComponent<Controlador>();
         
-        if (gameManager.comenzarDialogo21)
+        /*
+        if (gameManager.comenzarDialogo3)
         {
 
             if (primeraVez)
@@ -337,35 +256,46 @@ public class Dialogo2 : MonoBehaviour
             }
 
         }
+        */
 
-        if (objetoObtenido)
+        if (haInteracctuadoConOllin)
         {
-            objetoObtenido = false;
-            // Fundido en negro y aparición de personaje
-            StartCoroutine(FadeInFadeOut());
+            numDialogo = 0;
+            haInteracctuadoConOllin = false;
+            Hablar();
         }
 
+        if (haInteracctuadoConBaul)
+        {
+            numDialogo = 1;
+            haInteracctuadoConBaul = false;
+            interaccionConBaul = true;
+            Hablar();
+        }
 
-        // if (Input.GetKey(KeyCode.Return)) Hablar();
+        if (haInteracctuadoConEstanteria)
+        {
+            if (!interaccionConBaul) numDialogo = 2;
+            else numDialogo = 3;
+            haInteracctuadoConEstanteria = false;
+            Hablar();
+        }
+
+        if (llaveUsada)
+        {
+            llaveUsada = false;
+            numDialogo = 4;
+            Hablar();
+        }
+
+        
 
         // En el caso de que se toque la pantalla y haya aparecido la fecha
-        if (numDialogo % 2 == 0)
-        {
-            if ((flecha2.activeSelf && panelSiguiente.Pressed) || flecha2.activeSelf && Input.GetKey(KeyCode.Return))
-            {
-                continuarDialogo = true;
-                //scriptControlador.botonSonido();
-
-            }
-        }
-        else if ((flecha.activeSelf && panelSiguiente.Pressed) || flecha.activeSelf && Input.GetKey(KeyCode.Return))
+        if ((flecha.activeSelf && panelSiguiente.Pressed) || flecha.activeSelf && Input.GetKey(KeyCode.Return))
         {
             continuarDialogo = true;
-            //scriptControlador.botonSonido();
 
         }
-
-
 
     }
 

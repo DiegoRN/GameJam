@@ -1,0 +1,19 @@
+{
+    "dialogos": [
+        {
+            "Frase1": "Martin: I wish I hadn’t burnt the bloody letters."
+        },
+        {
+            "Frase1": "Martin: He always said that he kept here his biggest treasure. ¿Where is the damn key?"
+        },
+	  {
+            "Frase1": "Martin: So many books... He was not made for war."
+        },
+        {
+            "Frase1": "Martin: You never knew how to keep secrets."
+        },
+	  {
+            "Frase1": "Martin: Stupid... Why is this your treasure?"
+        }
+    ]
+}

@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
     public bool primeraVezHablaEscena23 = true;
     public bool comenzarDialogo21;
     public bool comenzarDialogo22;
-    public bool comenzarDialogo23;
     public bool activarMovimiento21 = false;
     public GameObject player;
 
@@ -77,6 +76,24 @@ public class GameManager : MonoBehaviour
             client.transform.position = Vector3.MoveTowards(client.transform.position, posicionFinalCliente, clientSpeed * Time.deltaTime);
             if (client.transform.position == posicionFinalCliente) comenzarDialogo = true;
 
+            if (finalEscena)
+            {
+                ouroborosImage.SetActive(true);
+                ouroborosImage.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * ouroborosSpeed, Space.World);
+                if (ouroborosSpeed < 1000)
+                {
+                    ouroborosSpeed += Time.deltaTime * 250f;
+                }
+                else
+                {
+                    fadeIn.SetActive(true);
+                }
+            }
+
+        }
+
+        if ((SceneManager.GetActiveScene().name == "Scene3") || (SceneManager.GetActiveScene().name == "Scene2"))
+        {
             if (finalEscena)
             {
                 ouroborosImage.SetActive(true);
