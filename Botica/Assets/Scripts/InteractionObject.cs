@@ -16,6 +16,7 @@ public class InteractionObject : MonoBehaviour
     public float verticalOffsetButton = 50.0f;
     public float buttonScaleSize = 1.0f;
     public float imageScaleSize = 1.0f;
+    public float distanceToPlayer = 2.5f;
 
     private void Start()
     {
@@ -26,6 +27,8 @@ public class InteractionObject : MonoBehaviour
         interactionButton.transform.localScale = new Vector3(buttonScaleSize, buttonScaleSize, buttonScaleSize);
         interactionImage.transform.position = new Vector3(screenPos.x, screenPos.y + verticalOffsetButton, screenPos.z);
         interactionImage.transform.localScale = new Vector3(imageScaleSize, imageScaleSize, imageScaleSize);
+        playerRef = GameObject.FindWithTag("Player").gameObject.transform;
+        cameraScene = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
     }
     private void Update()
     {
@@ -61,7 +64,7 @@ public class InteractionObject : MonoBehaviour
             interactionImage.SetActive(false);
             interactionButton.SetActive(false);
         }
-        if (Vector3.Distance(transform.position, playerRef.position) < 2.5f)
+        if (Vector3.Distance(transform.position, playerRef.position) < distanceToPlayer)
         {
             playerInRange = true;
         }
