@@ -73,10 +73,13 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void DropItem()
     {
-        GameObject theObject = Instantiate(myItem.ItemGameObject, Vector3.zero, Quaternion.identity);
-        
-        //theObject.Component<ItemObject>().SetItem(myItem);
-        InventoryContorller.Instance.DeleteItem(myItem);
+        if(InventoryContorller.Instance.canDropItem){
+            GameObject theObject = Instantiate(myItem.ItemGameObject, Vector3.zero, Quaternion.identity);
+
+            //theObject.Component<ItemObject>().SetItem(myItem);
+            InventoryContorller.Instance.DeleteItem(myItem);
+            InventoryContorller.Instance.canDropItem = false;
+        }
     }
 
     public void ShowDescription()

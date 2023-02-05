@@ -14,8 +14,9 @@ public class InventoryContorller : MonoBehaviour
     [SerializeField] GameObject SlotPrefab;
     [SerializeField] int maxSlots;
     public GameObject SlotHolder;
+    public bool canDropItem;
 
-    
+
     [Header("Recipebook")]
     public List<ItemCombined> Recipebook;
 
