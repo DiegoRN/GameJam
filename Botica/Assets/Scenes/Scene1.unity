@@ -532,7 +532,6 @@ MonoBehaviour:
   creditsText: {fileID: 0}
   finalCreditsTime: 0
   creditsTime: 0
-  Recipebook: []
 --- !u!4 &251527899
 Transform:
   m_ObjectHideFlags: 0

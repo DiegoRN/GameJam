@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: "Ra\xEDces"
   m_EditorClassIdentifier: 
   ItemMesh: {fileID: 0}
+  ItemMaterial: {fileID: 0}
   ItemImage: {fileID: 0}
-  ItemName: 
-  ItemDescription: 
+  ItemName: Roots
+  ItemDescription: Just a green root and a red root combined, its colors remind me
+    of something
