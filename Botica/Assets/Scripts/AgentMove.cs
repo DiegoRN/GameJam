@@ -9,16 +9,20 @@ public class AgentMove : MonoBehaviour
     public NavMeshAgent agent;
     private GameObject objectSeen;
     private GameObject pointSeen;
+    public SpriteRenderer sprite2D;
+    public Sprite front;
+    public Sprite back;
+    private Vector3 walkPoint;
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-
+        walkPoint = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(new Vector3(agent.pathEndPosition.x, transform.position.y, agent.pathEndPosition.z));
+        //transform.LookAt(new Vector3(agent.pathEndPosition.x, transform.position.y, agent.pathEndPosition.z));
         if (Input.GetMouseButtonDown(0))
         {
             if (objectSeen)
@@ -27,20 +31,23 @@ public class AgentMove : MonoBehaviour
                 if (NavMesh.SamplePosition(objectSeen.transform.position, out navMeshHit, 2.0f, NavMesh.AllAreas))
                 {
                     agent.SetDestination(navMeshHit.position);
+                    walkPoint = navMeshHit.position;
                 }
                 else {
                     agent.SetDestination(objectSeen.transform.position);
-
+                    walkPoint = objectSeen.transform.position;
                 }
             } else if(pointSeen){
                 NavMeshHit navMeshHit;
                 if (NavMesh.SamplePosition(pointSeen.transform.position, out navMeshHit, 2.0f, NavMesh.AllAreas))
                 {
                     agent.SetDestination(navMeshHit.position);
+                    walkPoint = navMeshHit.position;
                 }
                 else
                 {
                     agent.SetDestination(pointSeen.transform.position);
+                    walkPoint = pointSeen.transform.position;
 
                 }
             }
@@ -49,6 +56,7 @@ public class AgentMove : MonoBehaviour
                 if (hit.collider.gameObject.layer == LayerMask.NameToLayer("whatIsGround"))
                 {
                     agent.SetDestination(hit.point);
+                    walkPoint = hit.point;
                 }
             }
         }
@@ -86,6 +94,18 @@ public class AgentMove : MonoBehaviour
             {
                 pointSeen.GetComponentInChildren<InteractionPoint>().DeactivateImage();
                 pointSeen = null;
+            }
+        }
+        if(walkPoint != null && Vector3.Distance(walkPoint, transform.position) > 2){
+            if(walkPoint.x > transform.position.x){
+                    sprite2D.flipX = false;
+            } else{
+                    sprite2D.flipX = true;
+            }
+            if(walkPoint.z > transform.position.z){
+                sprite2D.sprite = back;
+            } else{
+                sprite2D.sprite = front;
             }
         }
     }

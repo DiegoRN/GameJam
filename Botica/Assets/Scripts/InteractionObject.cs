@@ -9,7 +9,7 @@ public class InteractionObject : MonoBehaviour
     public GameObject interactionImage;
     public Transform playerRef;
     public Camera cameraScene;
-    public InventoryContorller inventory;
+    //public InventoryContorller inventory;
     [SerializeField] Item myItem;
     private bool clickInRange = false;
     private bool playerInRange = false;
@@ -88,11 +88,9 @@ public class InteractionObject : MonoBehaviour
     {
         //ANDREA
         //No se si es en InventoryContorller.cs o en Inventory.cs
-        try{
-            inventory.AddItem(myItem);
-        }
-        catch (NullReferenceException){ }
-        Destroy(this.gameObject.transform.root.gameObject, 0.1f);
+        gameObject.GetComponent<ItemObject>().Interactuate();
+
+        //Destroy(this.gameObject.transform.root.gameObject, 0.1f);
     }
 
 }

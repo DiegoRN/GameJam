@@ -338,7 +338,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235861232}
-  m_LocalRotation: {x: 0.3638171, y: -0.0870461, z: 0.03417142, w: 0.9267645}
+  m_LocalRotation: {x: 0.17574215, y: -0.07194954, z: 0.012880026, w: 0.98171896}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 1970469694}
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
@@ -441,11 +441,11 @@ MonoBehaviour:
     width: 0.2
   m_Looped: 0
   m_Waypoints:
-  - position: {x: 0, y: 17.421505, z: -14.441529}
+  - position: {x: 0, y: 17.421505, z: -17.72653}
     roll: 0
-  - position: {x: 0, y: 10.435423, z: -13.8423195}
+  - position: {x: 0, y: 6.1221933, z: -16.257006}
     roll: 0
-  - position: {x: 0.7454119, y: 1.9044001, z: -5.4932876}
+  - position: {x: -0.6835151, y: 2.3067474, z: -7.4487424}
     roll: 0
 --- !u!4 &299578796
 Transform:
@@ -503,7 +503,7 @@ PlayableDirector:
   m_GameObject: {fileID: 340631918}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: ef262127dde6a414e91dae17623533a2, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 228820e64b816584da3b648f871d470e, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -516,6 +516,14 @@ PlayableDirector:
   - key: {fileID: -5025384834334145754, guid: ef262127dde6a414e91dae17623533a2, type: 2}
     value: {fileID: 1357856969}
   - key: {fileID: 957857879707009413, guid: ef262127dde6a414e91dae17623533a2, type: 2}
+    value: {fileID: 530246356}
+  - key: {fileID: -1955383365685319846, guid: 228820e64b816584da3b648f871d470e, type: 2}
+    value: {fileID: 1094693411}
+  - key: {fileID: 6234442900862684069, guid: 228820e64b816584da3b648f871d470e, type: 2}
+    value: {fileID: 235861234}
+  - key: {fileID: -5025384834334145754, guid: 228820e64b816584da3b648f871d470e, type: 2}
+    value: {fileID: 1357856969}
+  - key: {fileID: 957857879707009413, guid: 228820e64b816584da3b648f871d470e, type: 2}
     value: {fileID: 530246356}
   m_ExposedReferences:
     m_References:
@@ -629,7 +637,6 @@ MonoBehaviour:
   creditsText: {fileID: 0}
   finalCreditsTime: 0
   creditsTime: 0
-  Recipebook: []
 --- !u!4 &530246355
 Transform:
   m_ObjectHideFlags: 0
