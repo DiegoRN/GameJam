@@ -994,6 +994,8 @@ MonoBehaviour:
   creditsText: {fileID: 0}
   finalCreditsTime: 0
   creditsTime: 0
+  racies: {fileID: 0}
+  candelabroencendido: {fileID: 0}
 --- !u!4 &1111669329
 Transform:
   m_ObjectHideFlags: 0
@@ -1045,6 +1047,7 @@ MonoBehaviour:
   capa3: {fileID: 8300000, guid: b1ea1c5730af5eb4d81babf42a233878, type: 3}
   pociones: {fileID: 8300000, guid: 44114fd0cef83b447b5a57c2bace22e9, type: 3}
   ouroboros: {fileID: 8300000, guid: 65985dd8ca0ac6b4e823d80e1c71f5c7, type: 3}
+  escena2: {fileID: 8300000, guid: f9e1e4bb3d7f97d449bac29ce8dfe4c5, type: 3}
   bchangeTrack: 0
 --- !u!82 &1557956753
 AudioSource:

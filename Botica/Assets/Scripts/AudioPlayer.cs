@@ -66,7 +66,7 @@ public class AudioPlayer : MonoBehaviour
         if (track == "ouroboros") audioSource.clip = ouroboros;
         if (track == "intro") audioSource.clip = intro;
         if (track == "pociones") audioSource.clip = pociones;
-        if (track == "escena2") audioSource.clip = pociones;
+        if (track == "escena2") audioSource.clip = escena2;
         audioSource.Play();
         yield return FadeIn(.5f);
         bchangeTrack = false;
