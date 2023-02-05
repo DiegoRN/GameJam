@@ -49,6 +49,7 @@ public class Dialogo2 : MonoBehaviour
     public Vector3 posicionFinalPersonaje = new Vector3(-1.60000002f, 0.4833333f, -0.5f);
 
     public GameObject panelBotones;
+    public GameObject panelBotones2;
 
     public GameObject prefabPlayer;
 
@@ -108,6 +109,7 @@ public class Dialogo2 : MonoBehaviour
         }
 
         if (numDialogo == 4) panelBotones.SetActive(false);
+        if (numDialogo == 5) panelBotones2.SetActive(false);
     }
 
     IEnumerator MostrarDialogo(float time = 0.03f) // Se le pasa el diálogo que queremos y la velocidad del texto
@@ -148,6 +150,9 @@ public class Dialogo2 : MonoBehaviour
                 break;
             case 4:
                 dialogo = new string[]  {JsonConvert.SerializeObject(myDialogosList.dialogos[4].Frase1).Replace("\"", "")};
+                break;
+            case 5:
+                dialogo = new string[] { JsonConvert.SerializeObject(myDialogosList.dialogos[5].Frase1).Replace("\"", "") };
                 break;
             default:
                 Debug.Log("No existe el diálogo.");
@@ -238,11 +243,20 @@ public class Dialogo2 : MonoBehaviour
         else if (numDialogo == 3)
         {
             //gameManager.comenzarDialogo = false;
-            numDialogo = 4;
+            
             panelDialogo.SetActive(false);
             dejarDeHablar = true;
 
-            panelBotones.SetActive(true);
+            if (CheckScene2.Instance.escena2PrimeraVez)
+            {
+                numDialogo = 4;
+                panelBotones.SetActive(true);
+            }
+            else
+            {
+                numDialogo = 5;
+                panelBotones2.SetActive(true);
+            }
             //gameManager.finalEscena = true;
         }
         else if (numDialogo == 4)
@@ -250,10 +264,34 @@ public class Dialogo2 : MonoBehaviour
 
             //gameManager.comenzarDialogo = false;
             numDialogo = 5;
+
+            dejarDeHablar = true;
+
+            if (CheckScene2.Instance.escena2PrimeraVez)
+            {
+                CheckScene2.Instance.escena2PrimeraVez = false;
+                panelBotones.SetActive(false);
+            }
+            else panelBotones2.SetActive(false);
+
+            //fadeInChangeScene.SetActive(true);
+
+            gameManager.finalEscena = true;
+        }
+
+        else if (numDialogo == 5)
+        {
+            //gameManager.comenzarDialogo = false;
+            numDialogo = 6;
             panelDialogo2.SetActive(false);
             dejarDeHablar = true;
 
-            panelBotones.SetActive(false);
+            if (CheckScene2.Instance.escena2PrimeraVez)
+            {
+                CheckScene2.Instance.escena2PrimeraVez = false;
+                panelBotones.SetActive(false);
+            }
+            else panelBotones2.SetActive(false);
 
             //fadeInChangeScene.SetActive(true);
 

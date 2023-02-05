@@ -14,6 +14,9 @@
 	  },
 	  {
             "Frase1": "Martin: Yes, I’m John."
+	  },
+	  {
+            "Frase1": "Martin: Otra cosa."
 	  }
     ]
 }
