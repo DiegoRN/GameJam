@@ -983,12 +983,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0e0024674c6ae4c970ebeba04160b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intro: {fileID: 0}
+  intro: {fileID: 8300000, guid: f2a96c3e6aaf9fa439267648dd65d63b, type: 3}
   capa1: {fileID: 8300000, guid: 9d4a59bf7482e5f4993fa25a185beee8, type: 3}
   capa2: {fileID: 8300000, guid: e291b720cc7ff4d46b3c158701e0c1ff, type: 3}
   capa3: {fileID: 8300000, guid: b1ea1c5730af5eb4d81babf42a233878, type: 3}
-  pociones: {fileID: 0}
-  ouroboros: {fileID: 8300000, guid: 54be93c8fde245d4ca605b7f302b7f30, type: 3}
+  pociones: {fileID: 8300000, guid: 44114fd0cef83b447b5a57c2bace22e9, type: 3}
+  ouroboros: {fileID: 8300000, guid: 65985dd8ca0ac6b4e823d80e1c71f5c7, type: 3}
   bchangeTrack: 0
 --- !u!82 &1557956753
 AudioSource:
@@ -1329,6 +1329,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Scene1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1557956752}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: changeTrack
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: capa2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1890838417
