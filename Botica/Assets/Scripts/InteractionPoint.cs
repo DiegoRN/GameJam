@@ -75,9 +75,10 @@ public class InteractionPoint : MonoBehaviour
         //ANDREA
         //Aqui tendria que bloquear el movimiento del personaje y como que hacer highlight del inventario para poner algo
         //O se puede arrastrar el objeto encima y ya? Algo parecido a lo de combinar objetos supongo (?)
-        //Y habría que ver donde se realiza la accion de item correcto y tal
+        //Y habrï¿½a que ver donde se realiza la accion de item correcto y tal
         InventoryContorller.Instance.canDropItem = true;
         InventoryContorller.Instance.dropPoint = droppingPoint;
+        InventoryContorller.Instance.ChoosePickItem();
     }
     
 }
