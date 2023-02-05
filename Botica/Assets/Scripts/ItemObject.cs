@@ -8,7 +8,11 @@ public class ItemObject : MonoBehaviour
 
     void Start()
     {
-        if (myItem) GetComponent<MeshFilter>().mesh = myItem.ItemMesh;
+        if (myItem) 
+        {
+            GetComponent<MeshFilter>().mesh = myItem.ItemMesh;
+            GetComponent<MeshRenderer>().material = myItem.ItemMaterial;
+        }
     }
 
     public void Interactuate()
