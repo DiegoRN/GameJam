@@ -170,6 +170,7 @@ MonoBehaviour:
   panelDialogo: {fileID: 1801331094}
   dialogoActivo: 0
   textoDialogo: {fileID: 1837099838}
+  personaje2: {fileID: 2051443475}
   continuarDialogo: 0
   panelSiguiente: {fileID: 792013357}
   flecha: {fileID: 1778733767}
@@ -179,8 +180,8 @@ MonoBehaviour:
   jsonDialogoMapa1: {fileID: 4900000, guid: 57ff05dd161c6f14f8a4e6d296c8022a, type: 3}
   gameManager: {fileID: 530246354}
   objetoObtenido: 0
-  fadeIn: {fileID: 0}
-  fadeOut: {fileID: 0}
+  fadeIn: {fileID: 1732100001}
+  fadeOut: {fileID: 153653078}
   fadeInChangeScene: {fileID: 0}
   posicionFinalPersonaje: {x: -1.6, y: 0.4833333, z: -0.5}
   panelBotones: {fileID: 130432705}
@@ -344,6 +345,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130432705}
   m_CullTransparentMesh: 1
+--- !u!1 &153653078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2182150994482376214, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+  m_PrefabInstance: {fileID: 219868389}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &219868389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -855,7 +861,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 33d2d5682676d1e48ba94ac01b237c44, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
@@ -867,7 +873,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Yes, I'm John
+  m_Text: Supplant
 --- !u!222 &481509961
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1987,7 +1993,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 33d2d5682676d1e48ba94ac01b237c44, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
@@ -1999,7 +2005,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: No, I'm not John
+  m_Text: Do the Right Thing
 --- !u!222 &1411906790
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2510,7 +2516,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666516576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2520,8 +2526,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 319, y: 0}
-  m_SizeDelta: {x: 540.789, y: 152.158}
+  m_AnchoredPosition: {x: 386, y: 0}
+  m_SizeDelta: {x: 896.289, y: 152.158}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1666516578
 MonoBehaviour:
@@ -2567,37 +2573,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Dialogo2, Assembly-CSharp
+      - m_Target: {fileID: 47458474}
+        m_TargetAssemblyTypeName: Dialogo11, Assembly-CSharp
         m_MethodName: cambiarDialogo
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Dialogo2, Assembly-CSharp
-        m_MethodName: Hablar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Dialogo2, Assembly-CSharp
+      - m_Target: {fileID: 47458474}
+        m_TargetAssemblyTypeName: Dialogo11, Assembly-CSharp
         m_MethodName: EsconderBotones
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 130432705}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 47458474}
+        m_TargetAssemblyTypeName: Dialogo11, Assembly-CSharp
+        m_MethodName: AparecePersonaje
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2623,8 +2629,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f6884e9a2f5aca044b75bbc78052ea1b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2674,6 +2680,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1732100001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2182150994482376214, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+  m_PrefabInstance: {fileID: 1528193786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1753220962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,7 +2964,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819084619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2963,8 +2974,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -355, y: 0}
-  m_SizeDelta: {x: 540.789, y: 152.158}
+  m_AnchoredPosition: {x: -373, y: 0}
+  m_SizeDelta: {x: 896.289, y: 152.158}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1819084621
 MonoBehaviour:
@@ -3010,37 +3021,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Dialogo2, Assembly-CSharp
+      - m_Target: {fileID: 47458474}
+        m_TargetAssemblyTypeName: Dialogo11, Assembly-CSharp
         m_MethodName: cambiarDialogo
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Dialogo2, Assembly-CSharp
-        m_MethodName: Hablar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Dialogo2, Assembly-CSharp
+      - m_Target: {fileID: 47458474}
+        m_TargetAssemblyTypeName: Dialogo11, Assembly-CSharp
         m_MethodName: EsconderBotones
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 130432705}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 47458474}
+        m_TargetAssemblyTypeName: Dialogo11, Assembly-CSharp
+        m_MethodName: AparecePersonaje
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3066,8 +3077,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f6884e9a2f5aca044b75bbc78052ea1b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

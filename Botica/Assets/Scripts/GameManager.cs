@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Scene1")
+        if (SceneManager.GetActiveScene().name == "Scene1copia")
         {
             client.transform.position = Vector3.MoveTowards(client.transform.position, posicionFinalCliente, clientSpeed * Time.deltaTime);
             if (client.transform.position == posicionFinalCliente) comenzarDialogo = true;
