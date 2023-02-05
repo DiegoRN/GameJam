@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
+                    InventoryContorller.Instance.DeleteItem(racies);
                     fadeIn.SetActive(true);
                 }
             }

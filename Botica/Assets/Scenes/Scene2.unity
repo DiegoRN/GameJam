@@ -6327,6 +6327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interaction Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 6009299527763333080, guid: d56d3ab018c587845b900df4cacfd6b9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56d3ab018c587845b900df4cacfd6b9, type: 3}
 --- !u!1 &2115870034 stripped

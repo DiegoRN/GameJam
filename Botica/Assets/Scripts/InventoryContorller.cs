@@ -58,6 +58,7 @@ public class InventoryContorller : MonoBehaviour
 
     public void DeleteItem(Item Item)
     {
+        print("Hay estis: "+theInventory.GetAmount());
         if (theInventory.GetAmount() != 0)
         {
             GameObject SlotToRemove;
@@ -82,6 +83,7 @@ public class InventoryContorller : MonoBehaviour
 
             Destroy(Slots[i]);
         }
+
     }
 
     
