@@ -503,9 +503,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageItem: {fileID: 6871904653670454472}
+  backgroundImage: {fileID: 7539504832480808165}
   index: 0
   text: {fileID: 6861735699111762157}
   description: {fileID: 6564380626084285570}
+  originalColor: {r: 1, g: 1, b: 1, a: 0}
+  pickColor: {r: 0.6, g: 1, b: 0.5921569, a: 1}
   myItem: {fileID: 0}
   parentAfterDrag: {fileID: 0}
 --- !u!114 &8890964081804900070

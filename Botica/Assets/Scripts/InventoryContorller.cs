@@ -105,4 +105,13 @@ public class InventoryContorller : MonoBehaviour
         return null;
     }
 
+    public void ChoosePickItem()
+    {
+        foreach(GameObject slot in Slots)
+        {
+            Slot theActualSlot = slot.GetComponent<Slot>();
+            theActualSlot.ChangeColor(canDropItem);
+        }
+    }
+
 }

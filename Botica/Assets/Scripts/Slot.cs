@@ -16,6 +16,9 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     [SerializeField] private TextMeshProUGUI description;
     //[SerializeField] private Canvas canvas;
 
+    [SerializeField] private Color originalColor;
+    [SerializeField] private Color pickColor;
+
     public Item myItem;
 
     public Transform parentAfterDrag;
@@ -91,5 +94,11 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void HideDescription()
     {
         description.enabled = false;
+    }
+
+    public void ChangeColor(bool CanPickUp)
+    {
+        if (CanPickUp) backgroundImage.color = pickColor;
+        else backgroundImage.color = originalColor;
     }
 }
