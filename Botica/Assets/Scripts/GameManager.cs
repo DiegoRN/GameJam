@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
                 {
                     InventoryContorller.Instance.DeleteItem(racies);
                     fadeIn.SetActive(true);
+                    FindObjectOfType<AudioPlayer>().changeTrack("escena2");
                 }
             }
 
