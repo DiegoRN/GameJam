@@ -18,7 +18,7 @@ public class AgentMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(new Vector3(agent.pathEndPosition.x, transform.position.y, agent.pathEndPosition.z));
+        //transform.LookAt(new Vector3(agent.pathEndPosition.x, transform.position.y, agent.pathEndPosition.z));
         if (Input.GetMouseButtonDown(0))
         {
             if (objectSeen)

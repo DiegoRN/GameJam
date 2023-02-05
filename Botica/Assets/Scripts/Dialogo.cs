@@ -270,7 +270,7 @@ public class Dialogo : MonoBehaviour
 
         textoDialogo.text = "";
 
-        player.GetComponent<AgentMove>().enabled = true;
+        //player.GetComponent<AgentMove>().enabled = true;
         panelDialogo.SetActive(false);
 
 
