@@ -1,18 +1,16 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionObject : MonoBehaviour
+public class InteractionPoint : MonoBehaviour
 {
     public GameObject interactionButton;
     public GameObject interactionImage;
     public Transform playerRef;
+    public Transform droppingPoint;
     public Camera cameraScene;
-    public InventoryContorller inventory;
-    [SerializeField] Item myItem;
-    private bool clickInRange = false;
-    private bool playerInRange = false;
+    public bool clickInRange = false;
+    public bool playerInRange = false;
     public float verticalOffsetButton = 50.0f;
     public float buttonScaleSize = 1.0f;
     public float imageScaleSize = 1.0f;
@@ -36,7 +34,7 @@ public class InteractionObject : MonoBehaviour
             interactionButton.transform.localScale = new Vector3(buttonScaleSize, buttonScaleSize, buttonScaleSize);
             interactionImage.transform.position = new Vector3(screenPos.x, screenPos.y + verticalOffsetButton, screenPos.z);
             interactionImage.transform.localScale = new Vector3(imageScaleSize, imageScaleSize, imageScaleSize);
-
+            
 
             if (Time.timeScale == 0f)
             {
@@ -44,29 +42,21 @@ public class InteractionObject : MonoBehaviour
                 interactionButton.SetActive(false);
             }
 
-            if (playerInRange)
-            {
+            if(playerInRange){
                 interactionImage.SetActive(false);
                 interactionButton.SetActive(true);
-            }
-            else
-            {
+            } else{
                 interactionImage.SetActive(true);
                 interactionButton.SetActive(false);
             }
 
-        }
-        else
-        {
+        } else{
             interactionImage.SetActive(false);
             interactionButton.SetActive(false);
         }
-        if (Vector3.Distance(transform.position, playerRef.position) < 2.5f)
-        {
+        if(Vector3.Distance(transform.position, playerRef.position) < 2.5f){
             playerInRange = true;
-        }
-        else
-        {
+        } else{
             playerInRange = false;
         }
 
@@ -81,15 +71,11 @@ public class InteractionObject : MonoBehaviour
         clickInRange = false;
     }
 
-    public void AddItemToInventory()
-    {
+    public void DropItemFromInventory(){
         //ANDREA
-        //No se si es en InventoryContorller.cs o en Inventory.cs
-        try{
-            inventory.AddItem(myItem);
-        }
-        catch (NullReferenceException){ }
-        Destroy(this.gameObject.transform.root.gameObject, 0.1f);
+        //Aqui tendria que bloquear el movimiento del personaje y como que hacer highlight del inventario para poner algo
+        //O se puede arrastrar el objeto encima y ya? Algo parecido a lo de combinar objetos supongo (?)
+        //Y habría que ver donde se realiza la accion de item correcto y tal
     }
-
+    
 }
