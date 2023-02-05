@@ -96,7 +96,7 @@ public class AgentMove : MonoBehaviour
                 pointSeen = null;
             }
         }
-        if(walkPoint != null){
+        if(walkPoint != null && Vector3.Distance(walkPoint, transform.position) > 2){
             if(walkPoint.x > transform.position.x){
                     sprite2D.flipX = false;
             } else{
