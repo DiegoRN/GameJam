@@ -86,7 +86,13 @@ public class Dialogo2 : MonoBehaviour
         {*/
             myDialogosList = JsonUtility.FromJson<DialogosList>(jsonDialogoMapa1.text);
 
-       
+        if (!CheckScene2.Instance.escena2PrimeraVez)
+        {
+            personaje2.SetActive(true);
+            numDialogo = 3;
+        }
+
+
 
     }
 
@@ -118,9 +124,9 @@ public class Dialogo2 : MonoBehaviour
 
     IEnumerator MostrarDialogo(float time = 0.03f) // Se le pasa el diálogo que queremos y la velocidad del texto
     {
-       // Controlador scriptControlador = controlador.GetComponent<Controlador>();
+        // Controlador scriptControlador = controlador.GetComponent<Controlador>();
 
-        if (numDialogo%2 == 0)
+        if ((numDialogo % 2 == 0) || (numDialogo == 5))
         {
             panelDialogo2.SetActive(true);
         }
@@ -185,7 +191,7 @@ public class Dialogo2 : MonoBehaviour
                     {
                         res = string.Concat(res, dialogo[i][s]);
 
-                        if (numDialogo % 2 == 0)
+                        if ((numDialogo % 2 == 0) || (numDialogo == 5))
                         {
                             textoDialogo2.text = res;
                         }
@@ -197,7 +203,7 @@ public class Dialogo2 : MonoBehaviour
                     else yield break;
                 }
 
-                if (numDialogo % 2 == 0)
+                if ((numDialogo % 2 == 0) || (numDialogo == 5))
                 {
                     flecha2.SetActive(true);
                 } else flecha.SetActive(true);
@@ -208,7 +214,7 @@ public class Dialogo2 : MonoBehaviour
                     yield return null;
                 }
 
-                if (numDialogo % 2 == 0)
+                if ((numDialogo % 2 == 0) || (numDialogo == 5))
                 {
                     flecha2.SetActive(false);
                 }
@@ -311,6 +317,11 @@ public class Dialogo2 : MonoBehaviour
         numDialogo = numero;
     }
 
+    public void EsconderBotones(GameObject panel)
+    {
+        panel.SetActive(false);
+    }
+
     // Para que no se solapen los textos, se espera un frame para que haya sólo una llamada y se muestra el diálogo
     IEnumerator EsperarDialogo()
     {
@@ -371,7 +382,10 @@ public class Dialogo2 : MonoBehaviour
     void Update()
     {
         //Controlador scriptControlador = controlador.GetComponent<Controlador>();
+
         
+        
+
         if (gameManager.comenzarDialogo21)
         {
 
@@ -396,7 +410,7 @@ public class Dialogo2 : MonoBehaviour
         // if (Input.GetKey(KeyCode.Return)) Hablar();
 
         // En el caso de que se toque la pantalla y haya aparecido la fecha
-        if (numDialogo % 2 == 0)
+        if ((numDialogo % 2 == 0) || (numDialogo == 5))
         {
             if ((flecha2.activeSelf && panelSiguiente.Pressed) || flecha2.activeSelf && Input.GetKey(KeyCode.Return))
             {

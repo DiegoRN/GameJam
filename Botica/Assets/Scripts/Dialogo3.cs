@@ -70,6 +70,7 @@ public class Dialogo3 : MonoBehaviour
     void Start()
     {
             myDialogosList = JsonUtility.FromJson<DialogosList>(jsonDialogoMapa1.text);
+            player.GetComponent<AgentMove>().enabled = true;
 
     }
 
