@@ -15,7 +15,7 @@ public class InventoryContorller : MonoBehaviour
     [SerializeField] int maxSlots;
     public GameObject SlotHolder;
     public bool canDropItem;
-
+    public Transform dropPoint;
 
     [Header("Recipebook")]
     public List<ItemCombined> Recipebook;
@@ -64,7 +64,7 @@ public class InventoryContorller : MonoBehaviour
             int i = 0;
             foreach(GameObject slot in Slots)
             {
-            if(!slot){
+            if(slot){
                     if (slot.GetComponentInChildren<Slot>() != null)
                     {
                         if (slot.GetComponentInChildren<Slot>().myItem == Item)
