@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5877479545380660520}
   - component: {fileID: 8936473475182409285}
   - component: {fileID: -8961807132327336131}
+  - component: {fileID: -6594174647035359137}
   m_Layer: 0
   m_Name: red root
   m_TagString: Untagged
@@ -97,3 +98,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myItem: {fileID: 11400000, guid: b78c3384036e7e44b98e9681ff651c2e, type: 2}
+--- !u!64 &-6594174647035359137
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018199293945297696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 7f8fcacab8c2bea4c9b2660ec991bb63, type: 3}
