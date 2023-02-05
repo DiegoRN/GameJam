@@ -5104,7 +5104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6009299527727593759, guid: d56d3ab018c587845b900df4cacfd6b9, type: 3}
       propertyPath: verticalOffsetButton
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6009299527727593826, guid: d56d3ab018c587845b900df4cacfd6b9, type: 3}
       propertyPath: m_Name
@@ -5493,7 +5493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1659987483}
   - component: {fileID: 1659987484}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Dialogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5538,6 +5538,7 @@ MonoBehaviour:
   flecha2: {fileID: 552122361}
   numDialogo: 0
   player: {fileID: 1265375707}
+  canvas: {fileID: 598247970}
   dejarDeHablar: 1
   jsonDialogoMapa1: {fileID: 4900000, guid: f75247d331db2f9449c7c064da73dc45, type: 3}
   jsonDialogoMapa2: {fileID: 0}

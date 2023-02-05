@@ -25,6 +25,7 @@ public class Dialogo : MonoBehaviour
     public int numDialogo;
 
     public GameObject player;
+    public GameObject canvas;
 
 
     public bool dejarDeHablar = true;
@@ -225,6 +226,7 @@ public class Dialogo : MonoBehaviour
             dejarDeHablar = true;
 
             player.GetComponent<AgentMove>().enabled = true;
+            canvas.SetActive(false);
             //gameManager.finalEscena = true;
         }
 
