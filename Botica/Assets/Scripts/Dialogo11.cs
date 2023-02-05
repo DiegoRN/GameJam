@@ -53,6 +53,8 @@ public class Dialogo11 : MonoBehaviour
 
     public bool haInteracctuadoConMesa;
 
+    public GameObject imagen;
+
     [System.Serializable]
     public class Dialogos
     {
@@ -305,16 +307,15 @@ public class Dialogo11 : MonoBehaviour
         yield return new WaitForSeconds(fadeIn.GetComponent<SceneFader>().fadeSpeed);
         fadeIn.SetActive(false);
         personaje2.SetActive(true);
+        imagen.SetActive(true);
         //player.transform.position = posicionFinalPersonaje;
         //instantiate(player, player.transform.position, player.transform.rotation);
         Destroy(player);
-        Instantiate(prefabPlayer, posicionFinalPersonaje, Quaternion.identity);
-        prefabPlayer.GetComponent<AgentMove>().enabled = false;
-        gameManager.activarMovimiento21 = false;
         fadeOut.SetActive(true);
         yield return new WaitForSeconds(fadeOut.GetComponent<SceneFader>().fadeSpeed);
         //fadeOut.SetActive(false);
-        gameManager.comenzarDialogo21 = true;
+        yield return new WaitForSeconds(5);
+        gameManager.GoToScene("Credits");
         primeraVez = true;
         Hablar();
 
