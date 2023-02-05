@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d728f462328d3f4bb778c016f028955, type: 3}
-  m_Name: Pluma
+  m_Script: {fileID: 11500000, guid: fb93184f07be339438f710b2d964b1ac, type: 3}
+  m_Name: R_Cartas
   m_EditorClassIdentifier: 
-  ItemMesh: {fileID: 0}
-  ItemImage: {fileID: 0}
-  ItemName: Quill
-  ItemDescription: 
+  item1: {fileID: 0}
+  item2: {fileID: 0}
+  itemResult: {fileID: 0}

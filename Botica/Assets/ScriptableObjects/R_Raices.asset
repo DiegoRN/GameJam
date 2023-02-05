@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb93184f07be339438f710b2d964b1ac, type: 3}
-  m_Name: Receta_Carta
+  m_Name: R_Raices
   m_EditorClassIdentifier: 
-  item1: {fileID: 11400000, guid: 7cea6a0036aef8748bb52ea7212faab9, type: 2}
-  item2: {fileID: 11400000, guid: 6d6c5a23a5b6bd741be47e62cd16d47a, type: 2}
-  itemResult: {fileID: 11400000, guid: 1b0f7c2b2fe887e4b810c5eec9ea4648, type: 2}
+  item1: {fileID: 0}
+  item2: {fileID: 0}
+  itemResult: {fileID: 0}
