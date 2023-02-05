@@ -182,6 +182,10 @@ MonoBehaviour:
   SlotPrefab: {fileID: 1170024207506621816, guid: 5df1b25a737cadd46ba2f22d48dc4ae6, type: 3}
   maxSlots: 6
   SlotHolder: {fileID: 1263687414838988896}
+  Recipebook:
+  - {fileID: 11400000, guid: 4c158cadb30059946a049c77b017e46a, type: 2}
+  - {fileID: 11400000, guid: f65caff01a8ec7340bb3b1900c40de96, type: 2}
+  - {fileID: 11400000, guid: 038eead445c013643970b0b8026af439, type: 2}
 --- !u!114 &7902420489466980133
 MonoBehaviour:
   m_ObjectHideFlags: 0

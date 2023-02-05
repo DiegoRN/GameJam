@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d728f462328d3f4bb778c016f028955, type: 3}
   m_Name: "Ra\xEDz verde"
   m_EditorClassIdentifier: 
-  ItemMesh: {fileID: 0}
+  ItemMesh: {fileID: -5495902117074765545, guid: 7f8fcacab8c2bea4c9b2660ec991bb63, type: 3}
+  ItemMaterial: {fileID: 0}
   ItemImage: {fileID: 0}
-  ItemName: 
-  ItemDescription: 
+  ItemName: Greet Root
+  ItemDescription: Used at the right time, the user can go forward in time

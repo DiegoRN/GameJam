@@ -36,9 +36,6 @@ public class GameManager : MonoBehaviour
     public float finalCreditsTime;
     public float creditsTime;
 
-    [Header("Recipebook")]
-    public List<ItemCombined> Recipebook;
-
     public void GoToScene(string SceneName){
         SceneManager.LoadScene(SceneName);
         Time.timeScale = 1f;
@@ -144,30 +141,4 @@ public class GameManager : MonoBehaviour
         }
         
     }
-
-    public Item CombineItems(Item item1, Item item2)
-    {
-        foreach (ItemCombined combined in Recipebook)
-        {
-            if (item1 == combined.item1) {
-                if (item2 == combined.item2)
-                {
-                    return combined.itemResult;
-                }
-            }
-            if (item2 == combined.item1) {
-                if (item1 == combined.item2)
-                {
-                    return combined.itemResult;
-                }
-            }
-        }
-        return null;
-    }
-
-
-
-
-
-
 }
