@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     //Creamoss Singleton
-    public static GameManager Instance { get; private set; }
+    //public static GameManager Instance { get; private set; }
 
 
     [Header("Scene 1 parameters")]
@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+/*
     void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
             Instance = this; 
         } 
     }
+    */
 
     void Start()
     {
