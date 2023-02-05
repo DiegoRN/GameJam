@@ -23,7 +23,26 @@ public class AgentMove : MonoBehaviour
         {
             if (objectSeen)
             {
-                agent.SetDestination(objectSeen.transform.position);
+                NavMeshHit navMeshHit;
+                if (NavMesh.SamplePosition(objectSeen.transform.position, out navMeshHit, 2.0f, NavMesh.AllAreas))
+                {
+                    agent.SetDestination(navMeshHit.position);
+                }
+                else {
+                    agent.SetDestination(objectSeen.transform.position);
+
+                }
+            } else if(pointSeen){
+                NavMeshHit navMeshHit;
+                if (NavMesh.SamplePosition(pointSeen.transform.position, out navMeshHit, 2.0f, NavMesh.AllAreas))
+                {
+                    agent.SetDestination(navMeshHit.position);
+                }
+                else
+                {
+                    agent.SetDestination(pointSeen.transform.position);
+
+                }
             }
             else if (LookForGameObject(out RaycastHit hit))
             {

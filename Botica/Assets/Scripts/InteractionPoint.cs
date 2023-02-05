@@ -7,6 +7,7 @@ public class InteractionPoint : MonoBehaviour
     public GameObject interactionButton;
     public GameObject interactionImage;
     public Transform playerRef;
+    public Transform droppingPoint;
     public Camera cameraScene;
     public bool clickInRange = false;
     public bool playerInRange = false;
@@ -70,22 +71,11 @@ public class InteractionPoint : MonoBehaviour
         clickInRange = false;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            playerInRange = true;
-        }
+    public void DropItemFromInventory(){
+        //ANDREA
+        //Aqui tendria que bloquear el movimiento del personaje y como que hacer highlight del inventario para poner algo
+        //O se puede arrastrar el objeto encima y ya? Algo parecido a lo de combinar objetos supongo (?)
+        //Y habría que ver donde se realiza la accion de item correcto y tal
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            playerInRange = false;
-        }
-    }
-    
-
     
 }

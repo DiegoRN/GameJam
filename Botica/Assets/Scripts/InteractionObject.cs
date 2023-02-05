@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,40 +6,90 @@ using UnityEngine;
 public class InteractionObject : MonoBehaviour
 {
     public GameObject interactionButton;
+    public GameObject interactionImage;
+    public Transform playerRef;
     public Camera cameraScene;
+    public InventoryContorller inventory;
+    [SerializeField] Item myItem;
+    private bool clickInRange = false;
     private bool playerInRange = false;
     public float verticalOffsetButton = 50.0f;
     public float buttonScaleSize = 1.0f;
+    public float imageScaleSize = 1.0f;
 
     private void Start()
     {
         interactionButton.SetActive(false);
+        interactionImage.SetActive(false);
+        Vector3 screenPos = cameraScene.WorldToScreenPoint(gameObject.transform.position);
+        interactionButton.transform.position = new Vector3(screenPos.x, screenPos.y + verticalOffsetButton, screenPos.z);
+        interactionButton.transform.localScale = new Vector3(buttonScaleSize, buttonScaleSize, buttonScaleSize);
+        interactionImage.transform.position = new Vector3(screenPos.x, screenPos.y + verticalOffsetButton, screenPos.z);
+        interactionImage.transform.localScale = new Vector3(imageScaleSize, imageScaleSize, imageScaleSize);
     }
     private void Update()
     {
-        if(playerInRange){
+        if (clickInRange)
+        {
             Vector3 screenPos = cameraScene.WorldToScreenPoint(gameObject.transform.position);
             interactionButton.transform.position = new Vector3(screenPos.x, screenPos.y + verticalOffsetButton, screenPos.z);
             interactionButton.transform.localScale = new Vector3(buttonScaleSize, buttonScaleSize, buttonScaleSize);
-            if(Input.GetKeyDown(KeyCode.G)){
-                //Añadir al inventario
-            }
-            if(Time.timeScale == 0f){
+            interactionImage.transform.position = new Vector3(screenPos.x, screenPos.y + verticalOffsetButton, screenPos.z);
+            interactionImage.transform.localScale = new Vector3(imageScaleSize, imageScaleSize, imageScaleSize);
+
+
+            if (Time.timeScale == 0f)
+            {
+                interactionImage.SetActive(false);
                 interactionButton.SetActive(false);
-            } else{
+            }
+
+            if (playerInRange)
+            {
+                interactionImage.SetActive(false);
                 interactionButton.SetActive(true);
             }
+            else
+            {
+                interactionImage.SetActive(true);
+                interactionButton.SetActive(false);
+            }
+
         }
+        else
+        {
+            interactionImage.SetActive(false);
+            interactionButton.SetActive(false);
+        }
+        if (Vector3.Distance(transform.position, playerRef.position) < 2.5f)
+        {
+            playerInRange = true;
+        }
+        else
+        {
+            playerInRange = false;
+        }
+
     }
     public void ActivateImage()
     {
-        interactionButton.SetActive(true);
-        playerInRange = true;
+        clickInRange = true;
     }
 
     public void DeactivateImage()
     {
-        interactionButton.SetActive(false);
-        playerInRange = false;
+        clickInRange = false;
     }
+
+    public void AddItemToInventory()
+    {
+        //ANDREA
+        //No se si es en InventoryContorller.cs o en Inventory.cs
+        try{
+            inventory.AddItem(myItem);
+        }
+        catch (NullReferenceException){ }
+        Destroy(this.gameObject.transform.root.gameObject, 0.1f);
+    }
+
 }
