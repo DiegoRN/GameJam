@@ -12,7 +12,11 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip capa1;
     [SerializeField] AudioClip capa2;
     [SerializeField] AudioClip capa3;
+
+    [SerializeField] AudioClip pociones;
     [SerializeField] AudioClip ouroboros;
+
+
 
     static AudioPlayer instance;
 
@@ -60,6 +64,7 @@ public class AudioPlayer : MonoBehaviour
         if (track == "capa3") audioSource.clip = capa3;
         if (track == "ouroboros") audioSource.clip = ouroboros;
         if (track == "intro") audioSource.clip = intro;
+        if (track == "pociones") audioSource.clip = pociones;
         audioSource.Play();
         yield return FadeIn(.1f);
         bchangeTrack = false;
