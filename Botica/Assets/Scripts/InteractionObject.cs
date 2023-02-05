@@ -10,7 +10,6 @@ public class InteractionObject : MonoBehaviour
     public Transform playerRef;
     public Camera cameraScene;
     //public InventoryContorller inventory;
-    [SerializeField] Item myItem;
     private bool clickInRange = false;
     private bool playerInRange = false;
     public float verticalOffsetButton = 50.0f;
@@ -88,9 +87,9 @@ public class InteractionObject : MonoBehaviour
     {
         //ANDREA
         //No se si es en InventoryContorller.cs o en Inventory.cs
-        gameObject.GetComponent<ItemObject>().Interactuate();
+        gameObject.GetComponentInParent<ItemObject>().Interactuate();
 
-        //Destroy(this.gameObject.transform.root.gameObject, 0.1f);
+        Destroy(this.gameObject.transform.root.gameObject, 0.1f);
     }
 
 }
