@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: "Ra\xEDces"
   m_EditorClassIdentifier: 
   ItemGameObject: {fileID: 3848290249334160243, guid: f9fa2c292eff3b448a0f4995d3e972b3, type: 3}
-  ItemImage: {fileID: 0}
+  ItemImage: {fileID: 21300000, guid: 89d4267f977ed0e48bc874f619b9ba70, type: 3}
   ItemName: Roots
-  ItemDescription: Just a green root and a red root combined, its colors remind me
-    of something
+  ItemDescription: Just a green root and a red root combined
