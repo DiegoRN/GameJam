@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb93184f07be339438f710b2d964b1ac, type: 3}
   m_Name: R_Raices
   m_EditorClassIdentifier: 
-  item1: {fileID: 0}
-  item2: {fileID: 0}
-  itemResult: {fileID: 0}
+  item1: {fileID: 11400000, guid: b78c3384036e7e44b98e9681ff651c2e, type: 2}
+  item2: {fileID: 11400000, guid: 46c3fe94be170be4992a4b5b1a04b191, type: 2}
+  itemResult: {fileID: 11400000, guid: bf1450bb384419e47936b37f205a3019, type: 2}

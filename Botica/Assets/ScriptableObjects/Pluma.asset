@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pluma
   m_EditorClassIdentifier: 
   ItemMesh: {fileID: 0}
+  ItemMaterial: {fileID: 0}
   ItemImage: {fileID: 0}
   ItemName: Quill
-  ItemDescription: 
+  ItemDescription: This quill, it is like it may be< a double edge weapon

@@ -15,6 +15,10 @@ public class InventoryContorller : MonoBehaviour
     [SerializeField] int maxSlots;
     public GameObject SlotHolder;
 
+    
+    [Header("Recipebook")]
+    public List<ItemCombined> Recipebook;
+
     private void Awake() 
     { 
         // If there is an instance, and it's not me, delete myself.
@@ -75,4 +79,26 @@ public class InventoryContorller : MonoBehaviour
             Destroy(Slots[i]);
         }
     }
+
+    
+    public Item CombineItems(Item item1, Item item2)
+    {
+        foreach (ItemCombined combined in Recipebook)
+        {
+            if (item1 == combined.item1) {
+                if (item2 == combined.item2)
+                {
+                    return combined.itemResult;
+                }
+            }
+            if (item2 == combined.item1) {
+                if (item1 == combined.item2)
+                {
+                    return combined.itemResult;
+                }
+            }
+        }
+        return null;
+    }
+
 }

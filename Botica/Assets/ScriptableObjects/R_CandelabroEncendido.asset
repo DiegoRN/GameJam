@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb93184f07be339438f710b2d964b1ac, type: 3}
   m_Name: R_CandelabroEncendido
   m_EditorClassIdentifier: 
-  item1: {fileID: 0}
-  item2: {fileID: 0}
-  itemResult: {fileID: 0}
+  item1: {fileID: 11400000, guid: 807027e4ce5ab214881710745835e6a9, type: 2}
+  item2: {fileID: 11400000, guid: 41bc69bdcf2f14a4983edcf9bdd291f0, type: 2}
+  itemResult: {fileID: 11400000, guid: 37f17d9384b252c4ea37d744336db91f, type: 2}

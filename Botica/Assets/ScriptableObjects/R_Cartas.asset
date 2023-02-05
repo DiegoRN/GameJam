@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb93184f07be339438f710b2d964b1ac, type: 3}
   m_Name: R_Cartas
   m_EditorClassIdentifier: 
-  item1: {fileID: 0}
-  item2: {fileID: 0}
-  itemResult: {fileID: 0}
+  item1: {fileID: 11400000, guid: a97e7c6c1fedea14d85c6830987b031b, type: 2}
+  item2: {fileID: 11400000, guid: 516c325d35a15a246a7bb8634442887b, type: 2}
+  itemResult: {fileID: 11400000, guid: df38eb80abf3e6d43bc52443b4705924, type: 2}
