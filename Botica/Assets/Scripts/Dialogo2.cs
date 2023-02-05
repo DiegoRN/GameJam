@@ -110,6 +110,10 @@ public class Dialogo2 : MonoBehaviour
 
         if (numDialogo == 4) panelBotones.SetActive(false);
         if (numDialogo == 5) panelBotones2.SetActive(false);
+
+        if (player) player.GetComponent<AgentMove>().enabled = false;
+        if (prefabPlayer) prefabPlayer.GetComponent<AgentMove>().enabled = false;
+
     }
 
     IEnumerator MostrarDialogo(float time = 0.03f) // Se le pasa el diálogo que queremos y la velocidad del texto
@@ -337,6 +341,10 @@ public class Dialogo2 : MonoBehaviour
 
         textoDialogo.text = "";
 
+        if (player) player.GetComponent<AgentMove>().enabled = true;
+        panelDialogo.SetActive(false);
+        panelDialogo2.SetActive(false);
+
 
     }
 
@@ -351,6 +359,7 @@ public class Dialogo2 : MonoBehaviour
         //instantiate(player, player.transform.position, player.transform.rotation);
         Destroy(player);
         Instantiate(prefabPlayer, posicionFinalPersonaje, Quaternion.identity);
+        prefabPlayer.GetComponent<AgentMove>().enabled = false;
         fadeOut.SetActive(true);
         yield return new WaitForSeconds(fadeOut.GetComponent<SceneFader>().fadeSpeed);
         //fadeOut.SetActive(false);

@@ -90,6 +90,8 @@ public class Dialogo3 : MonoBehaviour
             corrutina = StartCoroutine(MostrarDialogo()); // Lanzar corrutina para pasarle el diálogo que queremos
         }
 
+        player.GetComponent<AgentMove>().enabled = false;
+
     }
 
     IEnumerator MostrarDialogo(float time = 0.03f) // Se le pasa el diálogo que queremos y la velocidad del texto
@@ -236,7 +238,8 @@ public class Dialogo3 : MonoBehaviour
 
         textoDialogo.text = "";
 
-
+        player.GetComponent<AgentMove>().enabled = true;
+        panelDialogo.SetActive(false);
     }
 
     void Update()
