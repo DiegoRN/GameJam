@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: "Ra\xEDz roja"
   m_EditorClassIdentifier: 
   ItemGameObject: {fileID: 2018199293945297696, guid: cd733d9e1da0421498e85ffd9eae902c, type: 3}
-  ItemImage: {fileID: 21300000, guid: acb4b5a65155c3544b6fef682181d649, type: 3}
+  ItemImage: {fileID: 21300000, guid: 37822216956ddbc439160009baf9f4dc, type: 3}
   ItemName: Red Root
   ItemDescription: Used at the right time, the user can go back in time

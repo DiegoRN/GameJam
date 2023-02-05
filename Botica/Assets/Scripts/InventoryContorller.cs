@@ -14,8 +14,9 @@ public class InventoryContorller : MonoBehaviour
     [SerializeField] GameObject SlotPrefab;
     [SerializeField] int maxSlots;
     public GameObject SlotHolder;
+    public bool canDropItem;
 
-    
+
     [Header("Recipebook")]
     public List<ItemCombined> Recipebook;
 
@@ -63,15 +64,18 @@ public class InventoryContorller : MonoBehaviour
             int i = 0;
             foreach(GameObject slot in Slots)
             {
-                if (slot.GetComponentInChildren<Slot>() != null)
-                {
-                    if (slot.GetComponentInChildren<Slot>().myItem == Item) {
-                        SlotToRemove = slot;
-                        //Slots.Remove(SlotToRemove.gameObject);
-                        //Slots[index].SetActive(false);
-                        theInventory.RemoveItem(Item);
-                        print("Quitamos el item");
-                        i++;
+            if(!slot){
+                    if (slot.GetComponentInChildren<Slot>() != null)
+                    {
+                        if (slot.GetComponentInChildren<Slot>().myItem == Item)
+                        {
+                            SlotToRemove = slot;
+                            //Slots.Remove(SlotToRemove.gameObject);
+                            //Slots[index].SetActive(false);
+                            theInventory.RemoveItem(Item);
+                            print("Quitamos el item");
+                            i++;
+                        }
                     }
                 }
             }
