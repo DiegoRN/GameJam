@@ -441,7 +441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2549, y: -1080}
+  m_AnchoredPosition: {x: 2515, y: -1080}
   m_SizeDelta: {x: 5729.6743, y: 3469.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &385595647
@@ -1214,7 +1214,6 @@ MonoBehaviour:
   primeraVezHablaEscena23: 1
   comenzarDialogo21: 0
   comenzarDialogo22: 0
-  comenzarDialogo23: 0
   activarMovimiento21: 0
   player: {fileID: 0}
   creditsSpeed: 0
