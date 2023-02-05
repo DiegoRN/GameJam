@@ -58,7 +58,7 @@ public class AudioPlayer : MonoBehaviour
 
     private IEnumerator changeTrackCoroutine(string track)
     {
-        yield return FadeOut(.5f);
+        yield return FadeOut(1f);
         if (track == "capa1") audioSource.clip = capa1;
         if (track == "capa2") audioSource.clip = capa2;
         if (track == "capa3") audioSource.clip = capa3;
@@ -66,7 +66,7 @@ public class AudioPlayer : MonoBehaviour
         if (track == "intro") audioSource.clip = intro;
         if (track == "pociones") audioSource.clip = pociones;
         audioSource.Play();
-        yield return FadeIn(.1f);
+        yield return FadeIn(.5f);
         bchangeTrack = false;
     }
 
