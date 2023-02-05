@@ -49,8 +49,9 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
         if (draggableItem != null && this != null)
         {
-            print("Combinamos: " + draggableItem.myItem.ItemName + " con "+ myItem.ItemName);
-            Item result = GameManager.Instance.CombineItems(draggableItem.myItem, this.myItem);
+            //print("Combinamos: " + draggableItem.myItem.ItemName + " con "+ myItem.ItemName);
+            GameManager gameManager = FindObjectOfType<GameManager>();
+            Item result = gameManager.CombineItems(draggableItem.myItem, this.myItem);
 
             if (result != null)
             {
