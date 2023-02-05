@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -46.059}
-  m_SizeDelta: {x: 55.9752, y: 34.6228}
+  m_AnchoredPosition: {x: 35, y: -48.515}
+  m_SizeDelta: {x: 61.4885, y: 52.656}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6281910078059856139
 CanvasRenderer:
@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ra\xEDz de mandr\xE1gora"
+  m_text: Candelabro encendido
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 796a1afed1ede0a4e9541b49a908fdce, type: 2}
   m_sharedMaterial: {fileID: 5858274307364577211, guid: 796a1afed1ede0a4e9541b49a908fdce, type: 2}
@@ -253,8 +253,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4279443004
+  m_fontColor: {r: 0.23529413, g: 0.11764707, b: 0.07450981, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -271,8 +271,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -505,7 +505,6 @@ MonoBehaviour:
   imageItem: {fileID: 6871904653670454472}
   index: 0
   text: {fileID: 6861735699111762157}
-  ItemObjectPrefab: {fileID: 2781560880105466738, guid: 1846c09a92739484aa9080e9b86731dd, type: 3}
   description: {fileID: 6564380626084285570}
   myItem: {fileID: 0}
   parentAfterDrag: {fileID: 0}
