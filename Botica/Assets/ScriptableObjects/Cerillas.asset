@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d728f462328d3f4bb778c016f028955, type: 3}
-  m_Name: Pluma
+  m_Name: Cerillas
   m_EditorClassIdentifier: 
   ItemMesh: {fileID: 0}
   ItemImage: {fileID: 0}
-  ItemName: Quill
+  ItemName: 
   ItemDescription: 
