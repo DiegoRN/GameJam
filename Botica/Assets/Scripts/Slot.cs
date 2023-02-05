@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
     [SerializeField] private Image imageItem;
+    [SerializeField] private Image backgroundImage;
     //[SerializeField] private Image imageGroup;
     [SerializeField] private int index;
     [SerializeField] private TextMeshProUGUI text;
