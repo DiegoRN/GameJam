@@ -5,6 +5,12 @@
         },
         {
             "Frase1": "Martin: It is not fair that war awaits one and the other one…"
+        },
+        {
+            "Frase1": "Martin: Not even having the opportunity can I do it.... Jonh."
+        },
+        {
+            "Frase1": "Martin: Congratulations on your engagement brother."
         }
     ]
 }

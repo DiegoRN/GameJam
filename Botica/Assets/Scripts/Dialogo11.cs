@@ -11,7 +11,8 @@ public class Dialogo11 : MonoBehaviour
 
     public bool dialogoActivo;
 
-    public Text textoDialogo;
+    public Text textoDialogo; 
+    public GameObject personaje2;
 
     Coroutine corrutina;
     public bool continuarDialogo = false;
@@ -105,6 +106,9 @@ public class Dialogo11 : MonoBehaviour
             dialogoActivo = false;
             corrutina = StartCoroutine(MostrarDialogo()); // Lanzar corrutina para pasarle el diálogo que queremos
         }
+
+        if (player) player.GetComponent<AgentMove>().enabled = false;
+        if (prefabPlayer) prefabPlayer.GetComponent<AgentMove>().enabled = false;
     }
 
     IEnumerator MostrarDialogo(float time = 0.03f) // Se le pasa el diálogo que queremos y la velocidad del texto
@@ -131,6 +135,14 @@ public class Dialogo11 : MonoBehaviour
             case 1:
 
                 dialogo = new string[]  {JsonConvert.SerializeObject(myDialogosList.dialogos[1].Frase1).Replace("\"", "")};
+                break;
+            case 2:
+
+                dialogo = new string[] { JsonConvert.SerializeObject(myDialogosList.dialogos[2].Frase1).Replace("\"", "") };
+                break;
+            case 3:
+
+                dialogo = new string[] { JsonConvert.SerializeObject(myDialogosList.dialogos[3].Frase1).Replace("\"", "") };
                 break;
             default:
                 Debug.Log("No existe el diálogo.");
@@ -204,6 +216,31 @@ public class Dialogo11 : MonoBehaviour
             
             panelBotones.SetActive(true);
         }
+        else if (numDialogo == 2)
+        {
+            numDialogo = 5;
+
+            dejarDeHablar = true;
+
+            panelBotones.SetActive(false);
+
+            //fadeInChangeScene.SetActive(true);
+
+            gameManager.finalEscena = true;
+        }
+        else if (numDialogo == 3)
+        {
+            numDialogo = 5;
+
+            dejarDeHablar = true;
+
+            panelBotones.SetActive(false);
+
+            //fadeInChangeScene.SetActive(true);
+
+            gameManager.finalEscena = true;
+        }
+
         if (dejarDeHablar) CerrarDialogo();
 
     }
@@ -216,6 +253,11 @@ public class Dialogo11 : MonoBehaviour
     public void EsconderBotones(GameObject panel)
     {
         panel.SetActive(false);
+    }
+
+    public void AparecePersonaje()
+    {
+        StartCoroutine(FadeInFadeOut());
     }
 
     // Para que no se solapen los textos, se espera un frame para que haya sólo una llamada y se muestra el diálogo
@@ -249,10 +291,32 @@ public class Dialogo11 : MonoBehaviour
         textoDialogo.text = "";
 
         if (player) player.GetComponent<AgentMove>().enabled = true;
+        if (prefabPlayer) prefabPlayer.GetComponent<AgentMove>().enabled = true;
         panelDialogo.SetActive(false);
 
-        player.GetComponent<AgentMove>().enabled = true;
         //gameManager.activarMovimiento21 = true;
+
+    }
+
+    IEnumerator FadeInFadeOut()
+    {
+        gameManager.activarMovimiento21 = false;
+        fadeIn.SetActive(true);
+        yield return new WaitForSeconds(fadeIn.GetComponent<SceneFader>().fadeSpeed);
+        fadeIn.SetActive(false);
+        personaje2.SetActive(true);
+        //player.transform.position = posicionFinalPersonaje;
+        //instantiate(player, player.transform.position, player.transform.rotation);
+        Destroy(player);
+        Instantiate(prefabPlayer, posicionFinalPersonaje, Quaternion.identity);
+        prefabPlayer.GetComponent<AgentMove>().enabled = false;
+        gameManager.activarMovimiento21 = false;
+        fadeOut.SetActive(true);
+        yield return new WaitForSeconds(fadeOut.GetComponent<SceneFader>().fadeSpeed);
+        //fadeOut.SetActive(false);
+        gameManager.comenzarDialogo21 = true;
+        primeraVez = true;
+        Hablar();
 
     }
 
