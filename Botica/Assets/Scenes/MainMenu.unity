@@ -290,8 +290,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1817693471}
-        m_TargetAssemblyTypeName: ScenesManagement, Assembly-CSharp
+      - m_Target: {fileID: 1111669328}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: LeaveGame
         m_Mode: 1
         m_Arguments:
@@ -839,7 +839,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1817693471}
+      - m_Target: {fileID: 1111669328}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GoToScene
         m_Mode: 5
@@ -889,6 +889,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079520226}
   m_CullTransparentMesh: 1
+--- !u!1 &1111669327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1111669329}
+  - component: {fileID: 1111669328}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1111669328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111669327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5aa8d5acc1ad142a630fc9d454a7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  client: {fileID: 0}
+  posicionFinalCliente: {x: 0, y: 0, z: 0}
+  clientSpeed: 0
+  comenzarDialogo: 0
+  finalEscena: 0
+  ouroborosImage: {fileID: 0}
+  ouroborosSpeed: 0
+  fadeIn: {fileID: 0}
+  numVecesEscena2: 1
+  primeraVezHablaEscena21: 1
+  primeraVezHablaEscena22: 1
+  primeraVezHablaEscena23: 1
+  comenzarDialogo21: 0
+  comenzarDialogo22: 0
+  activarMovimiento21: 0
+  player: {fileID: 0}
+  creditsSpeed: 0
+  creditsText: {fileID: 0}
+  finalCreditsTime: 0
+  creditsTime: 0
+  Recipebook: []
+--- !u!4 &1111669329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111669327}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1920, y: 1165, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557956751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +1099,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1806033615
 GameObject:
@@ -1171,71 +1236,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806033615}
   m_CullTransparentMesh: 1
---- !u!1 &1817693470
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1817693472}
-  - component: {fileID: 1817693471}
-  m_Layer: 0
-  m_Name: Scene Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1817693471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817693470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de5aa8d5acc1ad142a630fc9d454a7af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  client: {fileID: 0}
-  posicionFinalCliente: {x: 0, y: 0, z: 0}
-  clientSpeed: 0
-  comenzarDialogo: 0
-  finalEscena: 0
-  ouroborosImage: {fileID: 0}
-  ouroborosSpeed: 0
-  fadeIn: {fileID: 0}
-  numVecesEscena2: 1
-  primeraVezHablaEscena21: 1
-  primeraVezHablaEscena22: 1
-  primeraVezHablaEscena23: 1
-  comenzarDialogo21: 0
-  comenzarDialogo22: 0
-  activarMovimiento21: 0
-  player: {fileID: 0}
-  creditsSpeed: 0
-  creditsText: {fileID: 0}
-  finalCreditsTime: 0
-  creditsTime: 0
-  Recipebook: []
---- !u!4 &1817693472
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817693470}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 439.8, y: 193, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1890838414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,8 +1319,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1817693471}
-        m_TargetAssemblyTypeName: JumpToScene, Assembly-CSharp
+      - m_Target: {fileID: 1111669328}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GoToScene
         m_Mode: 5
         m_Arguments:
