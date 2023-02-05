@@ -77,6 +77,7 @@ public class InteractionPoint : MonoBehaviour
         //O se puede arrastrar el objeto encima y ya? Algo parecido a lo de combinar objetos supongo (?)
         //Y habría que ver donde se realiza la accion de item correcto y tal
         InventoryContorller.Instance.canDropItem = true;
+        InventoryContorller.Instance.dropPoint = droppingPoint;
     }
     
 }

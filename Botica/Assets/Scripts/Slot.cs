@@ -75,7 +75,7 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void DropItem()
     {
         if(InventoryContorller.Instance.canDropItem){
-            GameObject theObject = Instantiate(myItem.ItemGameObject, Vector3.zero, Quaternion.identity);
+            GameObject theObject = Instantiate(myItem.ItemGameObject, InventoryContorller.Instance.dropPoint);
 
             //theObject.Component<ItemObject>().SetItem(myItem);
             InventoryContorller.Instance.DeleteItem(myItem);
