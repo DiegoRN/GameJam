@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 3549002629040187687}
   - component: {fileID: 3549002629040187686}
   - component: {fileID: 3549002629040187737}
+  - component: {fileID: 4449918503922446369}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -239,3 +240,15 @@ MonoBehaviour:
   sprite2D: {fileID: 4351357813499351718}
   front: {fileID: 21300000, guid: 875027dfa9757b74792fa07a1a428b74, type: 3}
   back: {fileID: 21300000, guid: c41eb01658774e245b45256f1030d054, type: 3}
+--- !u!114 &4449918503922446369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549002629040187739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5acc34c9db330504eae7e2f537cdec67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
