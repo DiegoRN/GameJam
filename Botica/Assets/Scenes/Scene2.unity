@@ -1622,6 +1622,8 @@ MonoBehaviour:
   creditsText: {fileID: 0}
   finalCreditsTime: 0
   creditsTime: 0
+  racies: {fileID: 11400000, guid: bf1450bb384419e47936b37f205a3019, type: 2}
+  candelabroencendido: {fileID: 11400000, guid: 37f17d9384b252c4ea37d744336db91f, type: 2}
 --- !u!4 &530246355
 Transform:
   m_ObjectHideFlags: 0

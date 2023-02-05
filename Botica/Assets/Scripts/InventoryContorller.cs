@@ -7,7 +7,7 @@ public class InventoryContorller : MonoBehaviour
     //Creamoss Singleton
     public static InventoryContorller Instance { get; private set; }
 
-    private Inventory theInventory;
+    public Inventory theInventory;
     //public GameObject[] Slots;
     public List<GameObject> Slots;
 

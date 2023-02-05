@@ -43,6 +43,11 @@ public class Inventory
         }
     }
 
+    public bool HasItem(Item theItem)
+    {
+        return theInventory.Contains(theItem);
+    }
+
     public int GetAmount()
     {
         return amount;

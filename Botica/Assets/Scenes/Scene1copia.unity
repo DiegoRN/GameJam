@@ -644,6 +644,8 @@ MonoBehaviour:
   creditsText: {fileID: 0}
   finalCreditsTime: 0
   creditsTime: 0
+  racies: {fileID: 11400000, guid: bf1450bb384419e47936b37f205a3019, type: 2}
+  candelabroencendido: {fileID: 11400000, guid: 37f17d9384b252c4ea37d744336db91f, type: 2}
 --- !u!4 &251527899
 Transform:
   m_ObjectHideFlags: 0
@@ -1340,6 +1342,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2182150994165704733, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 193.7476
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182150994165704733, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 232.9133
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182150994165704733, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.673
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182150994165704733, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10.6198
+      objectReference: {fileID: 0}
     - target: {fileID: 2182150994482376211, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1428,9 +1446,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: FadeIn
       objectReference: {fileID: 0}
+    - target: {fileID: 2182150994482376214, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2182150994482376215, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
       propertyPath: sceneName
-      value: ObjectInteraction
+      value: Scene2
       objectReference: {fileID: 0}
     - target: {fileID: 2182150994482376215, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
       propertyPath: changeSceneAfterFadeIn

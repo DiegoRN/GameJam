@@ -36,6 +36,10 @@ public class GameManager : MonoBehaviour
     public float finalCreditsTime;
     public float creditsTime;
 
+    [Header("Items")]
+    public Item racies;
+    public Item candelabroencendido;
+
     public void GoToScene(string SceneName){
         SceneManager.LoadScene(SceneName);
         Time.timeScale = 1f;
@@ -67,9 +71,20 @@ public class GameManager : MonoBehaviour
         //DontDestroyOnLoad(this.gameObject);
     }
 
+    void CheckItems()
+    {
+        if (racies) finalEscena = InventoryContorller.Instance.theInventory.HasItem(racies);
+
+        Dialogo2 d2 = FindObjectOfType<Dialogo2>();
+        if (d2 != null && candelabroencendido)
+        {
+            d2.objetoObtenido = InventoryContorller.Instance.theInventory.HasItem(candelabroencendido);
+        }
+    }
 
     void Update()
     {
+        CheckItems();
         if (SceneManager.GetActiveScene().name == "Scene1copia")
         {
             client.transform.position = Vector3.MoveTowards(client.transform.position, posicionFinalCliente, clientSpeed * Time.deltaTime);

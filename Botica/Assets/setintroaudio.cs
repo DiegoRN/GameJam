@@ -8,7 +8,7 @@ public class setintroaudio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioPlayer = FindAnyObjectByType<AudioPlayer>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
         audioPlayer.changeTrack("intro");
     }
 
