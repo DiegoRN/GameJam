@@ -1,0 +1,10 @@
+{
+    "dialogos": [
+        {
+            "Frase1": "Martin: I have finally arrived at this moment."
+        },
+        {
+            "Frase1": "Martin: It is not fair that war awaits one and the other one…"
+        }
+    ]
+}

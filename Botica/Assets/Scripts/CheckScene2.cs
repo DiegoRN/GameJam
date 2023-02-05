@@ -8,6 +8,7 @@ public class CheckScene2 : MonoBehaviour
     public static CheckScene2 Instance { get; private set; }
 
     public bool escena2PrimeraVez = true;
+    public bool escenaTutorialPrimeraVez = true;
 
     void Awake()
     {
