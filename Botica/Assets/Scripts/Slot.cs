@@ -11,7 +11,7 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     //[SerializeField] private Image imageGroup;
     [SerializeField] private int index;
     [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private GameObject ItemObjectPrefab;
+    //[SerializeField] private GameObject ItemObjectPrefab;
     [SerializeField] private TextMeshProUGUI description;
     //[SerializeField] private Canvas canvas;
 
@@ -66,14 +66,16 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         myItem = theItem;
         imageItem.sprite = theItem.ItemImage;
+        imageItem.preserveAspect = true;
         text.text = theItem.ItemName;
         description.text = myItem.ItemDescription;
     }
 
     public void DropItem()
     {
-        GameObject theObject = Instantiate(ItemObjectPrefab, Vector3.zero, Quaternion.identity);
-        theObject.GetComponent<ItemObject>().SetItem(myItem);
+        GameObject theObject = Instantiate(myItem.ItemGameObject, Vector3.zero, Quaternion.identity);
+        
+        //theObject.Component<ItemObject>().SetItem(myItem);
         InventoryContorller.Instance.DeleteItem(myItem);
     }
 
