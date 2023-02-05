@@ -166,12 +166,11 @@ MonoBehaviour:
   primeraVezHablaEscena23: 1
   comenzarDialogo21: 0
   comenzarDialogo22: 0
-  comenzarDialogo23: 0
   activarMovimiento21: 0
   player: {fileID: 0}
-  creditsSpeed: 70
+  creditsSpeed: 120
   creditsText: {fileID: 1407496250}
-  finalCreditsTime: 15
+  finalCreditsTime: 30
   creditsTime: 0
   Recipebook: []
 --- !u!4 &199562706
@@ -293,8 +292,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -2, y: -7}
+  m_SizeDelta: {x: 282.0187, y: 27.7326}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &281936465
 MonoBehaviour:
@@ -309,16 +308,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8b78f9f0d4442b34283821193cdecccf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8db44c98adff6d0448fad60c5a3ef91e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -341,6 +340,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2182150994165704733, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 463.1671
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182150994165704733, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 516.2765
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182150994165704733, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 14.5564
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182150994165704733, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -13.7837
+      objectReference: {fileID: 0}
     - target: {fileID: 2182150994482376211, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -428,6 +443,10 @@ PrefabInstance:
     - target: {fileID: 2182150994482376214, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
       propertyPath: m_Name
       value: FadeIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182150994482376214, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2182150994482376215, guid: 87242237b983b5e4d993e6b0b84d306b, type: 3}
       propertyPath: sceneName
@@ -715,7 +734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1009.1012}
+  m_AnchoredPosition: {x: -0.000025431, y: -963}
   m_SizeDelta: {x: 1115.4697, y: 4607.936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999471133
@@ -731,7 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -739,7 +758,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 33d2d5682676d1e48ba94ac01b237c44, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
@@ -751,8 +770,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "THE DEVELOPMENT TEAM\n\nArtists\nValeria Kohatsu Salguero\nRuben Francisco
-    Buitron Proa\xF1o\n\nDesigners\nManuel Albertos Mart\xEDnez\nJaime Gonz\xE1lez
+  m_Text: "THE DEVELOPMENT TEAM\n\nArtists\nValeria Kohatsu Salguero\nRub\xE9n Francisco
+    Buitr\xF3n Proa\xF1o\n\nDesigners\nManuel Albertos Mart\xEDnez\nJaime Gonz\xE1lez
     Narv\xE1ez\nAna Souto Paez\n\nMusic Designer\nDiego Sabio Jim\xE9nez\n\nProgrammers\nDiego
     Ramos Nebot\nLaura Cifredo Herrero\nAndrea Cerver\xF3n Carot\nLuis Plasencia
     Pulido\nAlejandro Esteban Gonz\xE1lez Gatica"
