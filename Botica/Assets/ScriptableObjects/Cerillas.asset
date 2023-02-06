@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d728f462328d3f4bb778c016f028955, type: 3}
   m_Name: Cerillas
   m_EditorClassIdentifier: 
-  ItemMesh: {fileID: 0}
-  ItemMaterial: {fileID: 0}
+  ItemGameObject: {fileID: 131778, guid: 7094579d8cc44e642a0b7436e91a649b, type: 3}
   ItemImage: {fileID: 21300000, guid: 4e7055efd37fcd24095f889712ce123c, type: 3}
   ItemName: Match
   ItemDescription: Nothing spectacular, just a match, but it can provoke a great

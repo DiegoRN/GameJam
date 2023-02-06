@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d728f462328d3f4bb778c016f028955, type: 3}
   m_Name: Cartas
   m_EditorClassIdentifier: 
-  ItemMesh: {fileID: 0}
-  ItemMaterial: {fileID: 0}
+  ItemGameObject: {fileID: 2969199486246734137, guid: 143338391d9d5714cb7bce3ed98318af, type: 3}
   ItemImage: {fileID: 21300000, guid: ea30d19940e0b304ab7af95bdc58ef25, type: 3}
   ItemName: Letters
   ItemDescription: Just some paper, it could have changed something

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemGameObject: {fileID: 2844992850396360244, guid: 737035883834ab1489a775ebc625c3ed, type: 3}
   ItemImage: {fileID: 21300000, guid: 468f657e1233c4b459c8f085a7e2502f, type: 3}
-  ItemName: Greet Root
+  ItemName: Green Root
   ItemDescription: Used at the right time, the user can go forward in time

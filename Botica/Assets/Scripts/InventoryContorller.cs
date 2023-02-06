@@ -58,10 +58,11 @@ public class InventoryContorller : MonoBehaviour
 
     public void DeleteItem(Item item)
     {
-        print("Intentamos eliminar el item "+item.ItemName+" Hay estis: "+theInventory.GetAmount());
+        print("Intentamos eliminar el item "+item.ItemName+" Hay estos items: "+theInventory.GetAmount());
         if (!theInventory.IsEmpty())
         {
             int i = GetIndexSlotWithItem(item);
+            print("eliminamos el slot numero: "+i);
             if (i >= 0)
             {
                 GameObject SlotToRemove = Slots[i];
@@ -84,13 +85,11 @@ public class InventoryContorller : MonoBehaviour
         int i = 0;
         foreach(GameObject slot in Slots)
         {
-            if(slot){
-                if (slot.GetComponentInChildren<Slot>() != null)
+            if (slot.GetComponentInChildren<Slot>() != null)
+            {
+                if (slot.GetComponentInChildren<Slot>().myItem == item)
                 {
-                    if (slot.GetComponentInChildren<Slot>().myItem == item)
-                    {
-                        return i;
-                    }
+                    return i;
                 }
             }
             i++;
