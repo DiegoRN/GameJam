@@ -7,7 +7,7 @@ public class InventoryContorller : MonoBehaviour
     //Creamoss Singleton
     public static InventoryContorller Instance { get; private set; }
 
-    public Inventory theInventory;
+    private Inventory theInventory;
     //public GameObject[] Slots;
     public List<GameObject> Slots;
 
@@ -56,34 +56,46 @@ public class InventoryContorller : MonoBehaviour
         }
     }
 
-    public void DeleteItem(Item Item)
+    public void DeleteItem(Item item)
     {
-        print("Hay estis: "+theInventory.GetAmount());
-        if (theInventory.GetAmount() != 0)
+        print("Intentamos eliminar el item "+item.ItemName+" Hay estis: "+theInventory.GetAmount());
+        if (!theInventory.IsEmpty())
         {
-            GameObject SlotToRemove;
-            int i = 0;
-            foreach(GameObject slot in Slots)
+            int i = GetIndexSlotWithItem(item);
+            if (i >= 0)
             {
+                GameObject SlotToRemove = Slots[i];
+                bool goal = theInventory.RemoveItem(item);
+
+                if (goal)
+                {
+                    Destroy(SlotToRemove);
+                    print("eliminamos item");
+                }
+            }
+        }
+
+    }
+
+    private int GetIndexSlotWithItem(Item item)
+    {
+        if (!theInventory.HasItem(item)) return -1;
+
+        int i = 0;
+        foreach(GameObject slot in Slots)
+        {
             if(slot){
-                    if (slot.GetComponentInChildren<Slot>() != null)
+                if (slot.GetComponentInChildren<Slot>() != null)
+                {
+                    if (slot.GetComponentInChildren<Slot>().myItem == item)
                     {
-                        if (slot.GetComponentInChildren<Slot>().myItem == Item)
-                        {
-                            SlotToRemove = slot;
-                            //Slots.Remove(SlotToRemove.gameObject);
-                            //Slots[index].SetActive(false);
-                            theInventory.RemoveItem(Item);
-                            print("Quitamos el item");
-                            i++;
-                        }
+                        return i;
                     }
                 }
             }
-
-            Destroy(Slots[i]);
+            i++;
         }
-
+        return -1;
     }
 
     
@@ -114,6 +126,11 @@ public class InventoryContorller : MonoBehaviour
             Slot theActualSlot = slot.GetComponent<Slot>();
             theActualSlot.ChangeColor(canDropItem);
         }
+    }
+
+    public bool InventoryHasItem(Item theItem)
+    {
+        return theInventory.HasItem(theItem);
     }
 
 }

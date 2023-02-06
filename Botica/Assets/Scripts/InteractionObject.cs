@@ -7,8 +7,8 @@ public class InteractionObject : MonoBehaviour
 {
     public GameObject interactionButton;
     public GameObject interactionImage;
-    public Transform playerRef;
-    public Camera cameraScene;
+    private Transform playerRef;
+    //public Camera cameraScene;
     //public InventoryContorller inventory;
     private bool clickInRange = false;
     private bool playerInRange = false;
@@ -21,19 +21,22 @@ public class InteractionObject : MonoBehaviour
     {
         interactionButton.SetActive(false);
         interactionImage.SetActive(false);
-        Vector3 screenPos = cameraScene.WorldToScreenPoint(gameObject.transform.position);
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         interactionButton.transform.position = new Vector3(screenPos.x, screenPos.y + verticalOffsetButton, screenPos.z);
         interactionButton.transform.localScale = new Vector3(buttonScaleSize, buttonScaleSize, buttonScaleSize);
         interactionImage.transform.position = new Vector3(screenPos.x, screenPos.y + verticalOffsetButton, screenPos.z);
         interactionImage.transform.localScale = new Vector3(imageScaleSize, imageScaleSize, imageScaleSize);
+        
+        
         playerRef = GameObject.FindWithTag("Player").gameObject.transform;
-        cameraScene = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        //cameraScene = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
     }
     private void Update()
     {
+        if (!playerRef) playerRef = GameObject.FindWithTag("Player").gameObject.transform;
         if (clickInRange)
         {
-            Vector3 screenPos = cameraScene.WorldToScreenPoint(gameObject.transform.position);
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(gameObject.transform.position);
             interactionButton.transform.position = new Vector3(screenPos.x, screenPos.y + verticalOffsetButton, screenPos.z);
             interactionButton.transform.localScale = new Vector3(buttonScaleSize, buttonScaleSize, buttonScaleSize);
             interactionImage.transform.position = new Vector3(screenPos.x, screenPos.y + verticalOffsetButton, screenPos.z);

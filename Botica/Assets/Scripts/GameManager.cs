@@ -73,12 +73,12 @@ public class GameManager : MonoBehaviour
 
     void CheckItems()
     {
-        if (racies) finalEscena = InventoryContorller.Instance.theInventory.HasItem(racies);
+        if (racies) finalEscena = InventoryContorller.Instance.InventoryHasItem(racies);
 
         Dialogo2 d2 = FindObjectOfType<Dialogo2>();
         if (d2 != null && candelabroencendido)
         {
-            d2.objetoObtenido = InventoryContorller.Instance.theInventory.HasItem(candelabroencendido);
+            d2.objetoObtenido = InventoryContorller.Instance.InventoryHasItem(candelabroencendido);
         }
     }
 

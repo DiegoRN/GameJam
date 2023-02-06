@@ -10,6 +10,6 @@ public class lookAtScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.parent.transform.rotation = Quaternion.identity;
+        if (gameObject) gameObject.transform.parent.transform.rotation = Quaternion.identity;
     }
 }

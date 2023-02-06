@@ -57,4 +57,9 @@ public class Inventory
     {
         return amount >= maxCapacity;
     }
+
+    public bool IsEmpty()
+    {
+        return amount <= 0;
+    }
 }
