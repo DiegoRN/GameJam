@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d728f462328d3f4bb778c016f028955, type: 3}
   m_Name: Retrato
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   ItemGameObject: {fileID: 106042, guid: a9c41660a8948154890e05e9b6a4026e, type: 3}
   ItemImage: {fileID: 21300000, guid: a49c26a817792ab40ad4fc2a34a5390e, type: 3}
+=======
+  ItemGameObject: {fileID: 0}
+  ItemImage: {fileID: 21300000, guid: 4387ea30fa53c94419f63dd343e41784, type: 3}
+>>>>>>> Stashed changes
   ItemName: Portrait
   ItemDescription: A picture of us, we are so alike

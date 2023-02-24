@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d728f462328d3f4bb778c016f028955, type: 3}
   m_Name: Pluma
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   ItemGameObject: {fileID: 165626, guid: 3ac9ab6703c237b4981e8ec08254afb1, type: 3}
+=======
+  ItemGameObject: {fileID: 0}
+>>>>>>> Stashed changes
   ItemImage: {fileID: 21300000, guid: 42ddff3923302d54181e0f204e5a6d71, type: 3}
   ItemName: Quill
   ItemDescription: This quill, it is like it may be< a double edge weapon

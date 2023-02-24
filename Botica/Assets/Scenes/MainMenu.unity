@@ -268,8 +268,13 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< Updated upstream
     m_HighlightedColor: {r: 0.8018868, g: 0.5954329, b: 0.42868158, a: 1}
     m_PressedColor: {r: 0.6603774, g: 0.44974488, b: 0.36549187, a: 1}
+=======
+    m_HighlightedColor: {r: 0.6886792, g: 0.549302, b: 0.3681618, a: 1}
+    m_PressedColor: {r: 0.4056604, g: 0.30029735, b: 0.16328466, a: 1}
+>>>>>>> Stashed changes
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -861,8 +866,13 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< Updated upstream
     m_HighlightedColor: {r: 0.8, g: 0.59607846, b: 0.42745098, a: 1}
     m_PressedColor: {r: 0.65882355, g: 0.4509804, b: 0.3647059, a: 1}
+=======
+    m_HighlightedColor: {r: 0.6901961, g: 0.54901963, b: 0.36862746, a: 1}
+    m_PressedColor: {r: 0.40392157, g: 0.3019608, b: 0.16470589, a: 1}
+>>>>>>> Stashed changes
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -994,8 +1004,11 @@ MonoBehaviour:
   creditsText: {fileID: 0}
   finalCreditsTime: 0
   creditsTime: 0
+<<<<<<< Updated upstream
   racies: {fileID: 0}
   candelabroencendido: {fileID: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!4 &1111669329
 Transform:
   m_ObjectHideFlags: 0
@@ -1356,8 +1369,13 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< Updated upstream
     m_HighlightedColor: {r: 0.7735849, g: 0.62762547, b: 0.45733947, a: 1}
     m_PressedColor: {r: 0.6886792, g: 0.51795316, b: 0.316186, a: 1}
+=======
+    m_HighlightedColor: {r: 0.7264151, g: 0.60287124, b: 0.4568648, a: 1}
+    m_PressedColor: {r: 0.5188679, g: 0.34733963, b: 0.28227717, a: 1}
+>>>>>>> Stashed changes
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
